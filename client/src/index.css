@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#toolbox li {
+  padding: 1em .5em;
+  border-top: solid thick #b71c1c;
+  margin: 0 1px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  cursor: pointer;
+}
+
+#toolbox ul {
+  margin: 0;
+}
