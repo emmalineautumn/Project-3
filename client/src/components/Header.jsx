@@ -24,7 +24,7 @@ class Header extends Component {
                         ></div>
                         <a href="/profile" className="valign-wrapper right">
                             <span className="white-text" style={{ marginRight: '1em' }}>Username</span>
-                            <img className="z-depth-1 teal darken-4" src="https://www.wellnessodyssey.co.za/wp-content/uploads/2016/04/default-user-icon.png" alt="user" style={{
+                            <img className="z-depth-3 teal darken-4" src="https://www.wellnessodyssey.co.za/wp-content/uploads/2016/04/default-user-icon.png" alt="user" style={{
                                 height: '3em',
                                 width: '3em',
                                 borderRadius: '3em'
