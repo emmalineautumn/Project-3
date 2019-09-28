@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Dropdown extends Component {
     state = {
@@ -7,17 +7,25 @@ class Dropdown extends Component {
 
 
     toggleDropdown = () => {
-        this.setState({displayDropdown: !this.state.displayDropdown})
+        this.setState({ displayDropdown: !this.state.displayDropdown })
     }
 
-    render () {
+    render() {
         return (
-        <>
-            <li className="dropdown-trigger" data-target={this.props.id} onClick={this.toggleDropdown}>{this.props.label}</li>
-            <ul id={this.props.id} hidden={this.state.displayDropdown ? false : true}>
-                {this.props.children}
-            </ul>
-        </> 
+            <>
+                <li className="left-align" onClick={this.toggleDropdown} onMouseEnter={this.toggleDropdown} onMouseLeave={this.toggleDropdown}><a href={this.props.destination || '#'}>{this.props.label}</a>
+                    <ul id={this.props.id} className={"dropdown-content " + this.props.size}
+                    style={{
+                        position: 'relative',
+                        bottom: '-100%',
+                        display: this.state.displayDropdown ? 'flex' : 'none',
+                        flexDirection: 'column'
+                    }}
+                    >
+                        {this.props.children}
+                    </ul>
+                </li>
+            </>
         );
     }
 }
