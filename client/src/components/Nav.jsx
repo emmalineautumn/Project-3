@@ -32,6 +32,15 @@ class NavBar extends Component {
                         </Dropdown>
                     </Dropdown>
                 </ul >
+                <div className="center brand-logo">
+                <a href="/" className='valign-wrapper'>
+                    <span>Dragonslayer</span>
+                    <img src="/img/dragon_logo.png" alt="logo" style={{
+                        height: '2em',
+                        width: '2em'
+                    }} />
+                </a>
+</div>
             </nav >
             </>
     }
