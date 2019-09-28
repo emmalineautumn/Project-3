@@ -15,3 +15,7 @@ body {
 #toolbox ul {
   margin: 0;
 }
+
+#userDisplay:hover {
+  box-shadow: white;
+}
