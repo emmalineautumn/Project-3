@@ -34,10 +34,8 @@ class NavBar extends Component {
                 </ul >
                 <div className="center brand-logo">
                 <a href="/" className='valign-wrapper'>
-                    <span>Dragonslayer</span>
                     <img src="/img/dragon_logo.png" alt="logo" style={{
-                        height: '2em',
-                        width: '2em'
+                        height: '2em'
                     }} />
                 </a>
 </div>

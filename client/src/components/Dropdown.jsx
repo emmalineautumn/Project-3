@@ -13,13 +13,13 @@ class Dropdown extends Component {
     render() {
         return (
             <>
-                <li className="left-align" onClick={this.toggleDropdown} onMouseEnter={this.toggleDropdown} onMouseLeave={this.toggleDropdown}><a href={this.props.destination || '#'}>{this.props.label}</a>
+                <li className="left-align" onMouseEnter={this.toggleDropdown} onMouseLeave={this.toggleDropdown}><a href={this.props.destination || '#'}>{this.props.label}</a>
                     <ul id={this.props.id} className={"dropdown-content " + this.props.size}
                     style={{
                         position: 'relative',
                         bottom: '-100%',
                         display: this.state.displayDropdown ? 'flex' : 'none',
-                        flexDirection: 'column'
+                        flexDirection: 'column',
                     }}
                     >
                         {this.props.children}
