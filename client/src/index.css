@@ -12,6 +12,32 @@ body {
   cursor: pointer;
 }
 
+#toolbox li:hover {
+  box-shadow: 0 0 7px white;
+}
+
 #toolbox ul {
   margin: 0;
+}
+
+#userDisplay:hover {
+  box-shadow: 0 0 7px white;
+}
+
+.dropdown-content {
+  opacity: 1;
+}
+
+.dropdown-content li>a {
+  color: black;
+}
+
+.dropdown-content.small li {
+  min-height: auto;
+  background-color: whitesmoke;
+}
+
+.dropdown-content.small a {
+  padding: 3px 1.5em;
+  color: #b71c1c;
 }
