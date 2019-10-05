@@ -1,14 +1,14 @@
 
 const API = {
-    getAllCharacters: () => {
+    getAllClassses: () => {
         return $.ajax({
-            url: "character",
+            url: "classes",
             method: "GET"
         })
     },
-    getCharacter: (id) => {
+    getClasses: (id) => {
         return $.ajax({
-            url: "character/" + id,
+            url: "classes/" + id,
             method: "GET"
         })
     },
