@@ -1,7 +1,7 @@
 const axios = require("axios")
 
 module.exports = function (app) {
-    app.get("/characters", (req, res) => {
+    app.get("/classes", (req, res) => {
         axios.get("http://dnd5eapi.co/api/classes/").then(results => {
             let data = results.data
             res.json(data)
@@ -10,7 +10,7 @@ module.exports = function (app) {
         })
     })
 
-    app.get("/characters/:id", (req, res) => {
+    app.get("/classes/:id", (req, res) => {
         axios.get("http://dnd5eapi.co/api/classes/" + req.params.id).then(results => {
             let data = results.data
             res.json(data)
@@ -83,7 +83,7 @@ module.exports = function (app) {
     })
 
     app.get("/traits", (req, res) => {
-        axios.get("http://dnd5eapi.co/api/languages/").then(results => {
+        axios.get("http://dnd5eapi.co/api/traits/").then(results => {
             let data = results.data
             res.json(data)
         }).catch(err => {
