@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Dropdown from './Dropdown'
 
 class NavBar extends Component {
 
     render() {
         return <>
-            <div className='hide-on-med-and-down' style={{height: '2em'}}></div>
+            <div className='hide-on-med-and-down' style={{ height: '2em' }}></div>
             <nav className="red darken-4" >
                 <ul>
                     <li><NavLink to="/mycharacters">My Characters</NavLink></li>
@@ -34,14 +34,14 @@ class NavBar extends Component {
                     </Dropdown>
                 </ul >
                 <div className="center brand-logo">
-                <NavLink to="/" className='valign-wrapper'>
-                    <img src="/img/dragon_logo.png" alt="logo" style={{
-                        height: '2em'
-                    }} />
-                </NavLink>
-</div>
+                    <NavLink to="/" className='valign-wrapper'>
+                        <img src="/img/dragon_logo.png" alt="logo" style={{
+                            height: '2em'
+                        }} />
+                    </NavLink>
+                </div>
             </nav >
-            </>
+        </>
     }
 }
 

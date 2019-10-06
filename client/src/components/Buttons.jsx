@@ -2,7 +2,7 @@ import React from 'react'
 
 const Buttons = (props) => {
     return (
-        <button className="waves-effect waves-light btn-large red darken-4" onClick={props.clickThis}>{props.title}</button>
+        <button style={{margin: '.3em'}} className={"waves-effect waves-light btn-large " + (props.color ? props.color.join(' ') : null)} onClick={props.clickThis}>{props.title}</button>
     );
 }
 

@@ -1,25 +1,31 @@
 import React, {Component} from 'react';
-import Pager from '../components/Pager';
+import {Pager, Page} from '../components/Pagify';
 
 class CreateCampaign extends Component {
-    state = {
-        page: 0
-    }
-
-    handlePageUp = () => {
-        this.setState(prevState => ({page: ++prevState.page}))
-    }
-
     render(){
         return (
-            <Pager>
+            <div className="container grey clearfix">
+            <Pager paginate={true}>
                 <div>
                     Hello
                 </div>
                 <div>
                     goodbye
                 </div>
+                <div>
+                    hey
+                </div>
+                <div>
+                    see ya
+                </div>
+                <div>
+                    guten tag
+                </div>
+                <div>
+                    tchuess
+                </div>
             </Pager>
+            </div>
         )
     }
 }
