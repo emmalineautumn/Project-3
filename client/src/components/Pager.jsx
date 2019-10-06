@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Buttons from './Buttons';
 
 function Pager (props) {
     const [page, setPage] = useState(0);
@@ -6,8 +7,8 @@ function Pager (props) {
     return (
         <>
             {props.children[page]}
-            {page > 0 && <button onClick={() => setPage(page - 1)}>Previous</button>}
-            {page < props.children.length - 1 && <button onClick={() => setPage(page + 1)}>Next</button>}
+            {page > 0 && <Buttons clickThis={() => setPage(page - 1)} title="Previous" />}
+            {page < props.children.length - 1 && <Buttons clickThis={() => setPage(page + 1)} title="Next" />}
         </>
     )
 }
