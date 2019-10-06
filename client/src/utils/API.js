@@ -2,187 +2,187 @@
 const API = {
     getAllClassses: () => {
         return $.ajax({
-            url: "classes",
+            url: "api/classes",
             method: "GET"
         })
     },
     getClasses: (id) => {
         return $.ajax({
-            url: "classes/" + id,
+            url: "api/classes/" + id,
             method: "GET"
         })
     },
     getCharacterLevel: (name, level) => {
         return $.ajax({
-            url: "classes/" + name + "/level/" + level,
+            url: "api/classes/" + name + "/level/" + level,
             method: "GET"
         })
     },
     getAllRaces: () => {
         return $.ajax({
-            url: "races",
+            url: "api/races",
             method: "GET"
         })
     },
     getRace: (id) => {
         return $.ajax({
-            url: "races/" + id,
+            url: "api/races/" + id,
             method: "GET"
         })
     },
     getAllSubRaces: () => {
         return $.ajax({
-            url: "subraces",
+            url: "api/subraces",
             method: "GET"
         })
     },
     getSubRace: (id) => {
         return $.ajax({
-            url: "subraces/" + id,
+            url: "api/subraces/" + id,
             method: "GET"
         })
     },
     getAllLanguages: () => {
         return $.ajax({
-            url: "languages",
+            url: "api/languages",
             method: "GET"
         })
     },
     getLanguage: (id) => {
         return $.ajax({
-            url: "languages/" + id,
+            url: "api/languages/" + id,
             method: "GET"
         })
     },
     getAllTraits: () => {
         return $.ajax({
-            url: "traits",
+            url: "api/traits",
             method: "GET"
         })
     },
     getTrait: (id) => {
         return $.ajax({
-            url: "traits/" + id,
+            url: "api/traits/" + id,
             method: "GET"
         })
     },
     getAllMonsters: () => {
         return $.ajax({
-            url: "monsters",
+            url: "api/monsters",
             method: "GET"
         })
     },
     getMonster: (id) => {
         return $.ajax({
-            url: "monsters/" + id,
+            url: "api/monsters/" + id,
             method: "GET"
         })
     },
     getAllSpells: () => {
         return $.ajax({
-            url: "spells",
+            url: "api/spells",
             method: "GET"
         })
     },
     getSpell: (id) => {
         return $.ajax({
-            url: "spells/" + id,
+            url: "api/spells/" + id,
             method: "GET"
         })
     },
     getAllFeatures: () => {
         return $.ajax({
-            url: "features",
+            url: "api/features",
             method: "GET"
         })
     },
     getFeature: (id) => {
         return $.ajax({
-            url: "features/" + id,
+            url: "api/features/" + id,
             method: "GET"
         })
     },
     getAllSkills: () => {
         return $.ajax({
-            url: "skills",
+            url: "api/skills",
             method: "GET"
         })
     },
     getSkill: (id) => {
         return $.ajax({
-            url: "skills/" + id,
+            url: "api/skills/" + id,
             method: "GET"
         })
     },
     getAllEquipment: () => {
         return $.ajax({
-            url: "equipment",
+            url: "api/equipment",
             method: "GET"
         })
     },
     getEquipment: (id) => {
         return $.ajax({
-            url: "equipment/" + id,
+            url: "api/equipment/" + id,
             method: "GET"
         })
     },
     getAllStartingEquipment: () => {
         return $.ajax({
-            url: "startingequipment",
+            url: "api/startingequipment",
             method: "GET"
         })
     },
     getStartingEquipment: (id) => {
         return $.ajax({
-            url: "startingequipment/" + id,
+            url: "api/startingequipment/" + id,
             method: "GET"
         })
     },
     getAllConditions: () => {
         return $.ajax({
-            url: "conditions",
+            url: "api/conditions",
             method: "GET"
         })
     },
     getCondition: (id) => {
         return $.ajax({
-            url: "conditions/" + id,
+            url: "api/conditions/" + id,
             method: "GET"
         })
     },
     getAllAbilityScores: () => {
         return $.ajax({
-            url: "ability-scores",
+            url: "api/ability-scores",
             method: "GET"
         })
     },
     getAbilityScore: (id) => {
         return $.ajax({
-            url: "ability-scores/" + id,
+            url: "api/ability-scores/" + id,
             method: "GET"
         })
     },
     getAllDamageTypes: () => {
         return $.ajax({
-            url: "damage-types",
+            url: "api/damage-types",
             method: "GET"
         })
     },
     getDamageType: (id) => {
         return $.ajax({
-            url: "damage-types/" + id,
+            url: "api/damage-types/" + id,
             method: "GET"
         })
     },
     getAllMagicSchools: () => {
         return $.ajax({
-            url: "magic-schools",
+            url: "api/magic-schools",
             method: "GET"
         })
     },
     getMagicSchool: (id) => {
         return $.ajax({
-            url: "magic-schools/" + id,
+            url: "api/magic-schools/" + id,
             method: "GET"
         })
     },
