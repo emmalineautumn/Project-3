@@ -17,6 +17,10 @@ let UserSchema = new Schema({
     required: true,
     unique: true
   },
+  date: {
+    type: Date,
+    default: Date.now
+  },
   characters: [{
     type: Schema.Types.ObjectId,
     ref: "Character"
