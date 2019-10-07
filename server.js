@@ -5,7 +5,6 @@ const app = express();
 const mongoose = require("mongoose")
 const router = require("./routes")
 const passport = require("passport");
-const users = require("./routes/api/users");
 // Connect to MongoDB
 
 // Define middleware here
