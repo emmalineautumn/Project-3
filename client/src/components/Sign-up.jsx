@@ -22,6 +22,12 @@ const SignUp = (props) => {
                     </div>
                     <div className="row">
                         <div className="input-field col s12">
+                            <input id="password" type="password" name="password2" classNameName="validate" value={password} onChange={event => setPassword(event.target.value)} />
+                            <label for="password">Confirm Password</label>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="input-field col s12">
                             <input id="email" type="email" name="email" className="validate" value={email} onChange={event => setEmail(event.target.value)} />
                             <label for="email">Email</label>
                         </div>

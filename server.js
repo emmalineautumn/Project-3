@@ -4,6 +4,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose")
 const router = require("./routes")
+const passport = require("passport");
+// Connect to MongoDB
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
