@@ -7,12 +7,22 @@ class Character extends Component {
     render() {
         let imgSrc = `${CHAR_API}.png`;
         return (
-            <div className="Character">
+            <div className="Character" style={{ 
+                backgroundColor: "rgb(144, 144, 144)",
+                borderRadius: "3px",
+                width: "500px",
+                padding: "10px",
+                margin: "1rem",
+                boxShadow: "7px 10px 12px -5px",
+                textAlign: "center",
+                float: "right",
+                overflow: "hidden",
+                marginTop: "5%",
+                marginLeft: "10%"
+            }}>
                 <div className="Character-image" style={{
-                    display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    backgroundColor: '#050505',
                     borderRadius: '3px',
                     marginBottom: '1rem'
                 }}>
