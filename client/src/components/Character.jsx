@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Builder';
+import '../App.css';
 
 const CHAR_API = ""; 
 
@@ -18,8 +19,7 @@ class Character extends Component {
                 float: "right",
                 overflow: "hidden",
                 marginTop: "5%",
-                marginLeft: "10%"
-            }}>
+                marginLeft: "10%"            }}>
                 <div className="Character-image" style={{
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -31,9 +31,13 @@ class Character extends Component {
             <h1 className="Character-title" style={{
                 marginBotom: '1rem',
                 fontWeight: 'bold',
-                fontSize: '2.5rem',
-                color: '#B71C1C'
+                fontSize: '4rem',
+                color: '#B71C1C',
+                fontFamily: 'Qwigley'
             }}>Moar Wightbroad{}</h1>
+            <div style={{
+                fontFamily: 'Grenze'
+            }}>
                 <div className="Character-data">Class: {}</div>
                 <div className="Character-data">Race: {}</div>
                 <div className="Character-data">Race: {}</div>
@@ -41,6 +45,7 @@ class Character extends Component {
                 <div className="Character-data">BG: {}</div>
                 <div className="Character-data">Languages: {}</div>
                 <div className="Character-data">Equipment: {}</div>
+            </div>
           </div>
         );
     }

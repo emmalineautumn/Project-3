@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import Dropdown from './Dropdown'
+import Dropdown from './Dropdown';
+import "../App.css";
+
 
 class NavBar extends Component {
 
@@ -8,7 +10,9 @@ class NavBar extends Component {
         return <>
             <div className='hide-on-med-and-down' style={{ height: '2em' }}></div>
             <nav className="red darken-4" >
-                <ul>
+                <ul style={{ 
+                    fontFamily: 'Grenze'
+                }}>
                     <li><NavLink to="/mycharacters">My Characters</NavLink></li>
                     <li><NavLink to="/mycampaigns">My Campaigns</NavLink></li>
                     <li><NavLink to="/mytables">My Tables</NavLink></li>
