@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Character'; 
+import "../App.css";
 
 class Builder extends Component {
     render() {
@@ -17,7 +18,9 @@ class Builder extends Component {
               float: "left",
               overflow: "hidden",
               marginTop: "5%",
-              marginLeft: "10%"
+              marginLeft: "10%",
+                fontFamily: 'Grenze'
+
             }}
           >
             <h1
