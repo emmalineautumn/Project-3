@@ -1,190 +1,98 @@
+import axios from "axios";
 
 const API = {
     getAllClassses: () => {
-        return $.ajax({
-            url: "api/classes",
-            method: "GET"
-        })
+        return axios.get("/api/classes");
     },
-    getClasses: (id) => {
-        return $.ajax({
-            url: "api/classes/" + id,
-            method: "GET"
-        })
+    getClasses: id => {
+        return axios.get("/api/classes/" + id);
     },
-    getCharacterLevel: (name, level) => {
-        return $.ajax({
-            url: "api/classes/" + name + "/level/" + level,
-            method: "GET"
-        })
+    getCharacterLevel: (charClass, level) => {
+        return axios.get("/api/classes/" + charClass + "/level/" + level);
     },
     getAllRaces: () => {
-        return $.ajax({
-            url: "api/races",
-            method: "GET"
-        })
+        return axios.get("/api/races");
     },
-    getRace: (id) => {
-        return $.ajax({
-            url: "api/races/" + id,
-            method: "GET"
-        })
+    getRace: id => {
+        return axios.get("/api/races/" + id);
     },
     getAllSubRaces: () => {
-        return $.ajax({
-            url: "api/subraces",
-            method: "GET"
-        })
+        return axios.get("/api/subraces");
     },
-    getSubRace: (id) => {
-        return $.ajax({
-            url: "api/subraces/" + id,
-            method: "GET"
-        })
+    getSubRace: id => {
+        return axios.get("/api/subraces/" + id);
     },
     getAllLanguages: () => {
-        return $.ajax({
-            url: "api/languages",
-            method: "GET"
-        })
+        return axios.get("/api/languages");
     },
-    getLanguage: (id) => {
-        return $.ajax({
-            url: "api/languages/" + id,
-            method: "GET"
-        })
+    getLanguage: id => {
+        return axios.get("/api/languages/" + id);
     },
     getAllTraits: () => {
-        return $.ajax({
-            url: "api/traits",
-            method: "GET"
-        })
+        return axios.get("/api/traits");
     },
-    getTrait: (id) => {
-        return $.ajax({
-            url: "api/traits/" + id,
-            method: "GET"
-        })
+    getTrait: id => {
+        return axios.get("/api/traits/" + id);
     },
     getAllMonsters: () => {
-        return $.ajax({
-            url: "api/monsters",
-            method: "GET"
-        })
+        return axios.get("/api/monsters");
     },
-    getMonster: (id) => {
-        return $.ajax({
-            url: "api/monsters/" + id,
-            method: "GET"
-        })
+    getMonster: id => {
+        return axios.get("/api/monsters/" + id);
     },
     getAllSpells: () => {
-        return $.ajax({
-            url: "api/spells",
-            method: "GET"
-        })
+        return axios.get("/api/spells");
     },
-    getSpell: (id) => {
-        return $.ajax({
-            url: "api/spells/" + id,
-            method: "GET"
-        })
+    getSpell: id => {
+        return axios.get("/api/spells/" + id);
     },
     getAllFeatures: () => {
-        return $.ajax({
-            url: "api/features",
-            method: "GET"
-        })
+        return axios.get("/api/features");
     },
-    getFeature: (id) => {
-        return $.ajax({
-            url: "api/features/" + id,
-            method: "GET"
-        })
+    getFeature: id => {
+        return axios.get("/api/features/" + id);
     },
     getAllSkills: () => {
-        return $.ajax({
-            url: "api/skills",
-            method: "GET"
-        })
+        return axios.get("/api/skills");
     },
-    getSkill: (id) => {
-        return $.ajax({
-            url: "api/skills/" + id,
-            method: "GET"
-        })
+    getSkill: id => {
+        return axios.get("/api/skills/" + id);
     },
     getAllEquipment: () => {
-        return $.ajax({
-            url: "api/equipment",
-            method: "GET"
-        })
+        return axios.get("/api/equipment");
     },
-    getEquipment: (id) => {
-        return $.ajax({
-            url: "api/equipment/" + id,
-            method: "GET"
-        })
+    getEquipment: id => {
+        return axios.get("/api/equipment/" + id);
     },
     getAllStartingEquipment: () => {
-        return $.ajax({
-            url: "api/startingequipment",
-            method: "GET"
-        })
+        return axios.get("/api/startingequipment");
     },
-    getStartingEquipment: (id) => {
-        return $.ajax({
-            url: "api/startingequipment/" + id,
-            method: "GET"
-        })
+    getStartingEquipment: id => {
+        return axios.get("/api/startingequipment/" + id);
     },
     getAllConditions: () => {
-        return $.ajax({
-            url: "api/conditions",
-            method: "GET"
-        })
+        return axios.get("/api/conditions");
     },
-    getCondition: (id) => {
-        return $.ajax({
-            url: "api/conditions/" + id,
-            method: "GET"
-        })
+    getCondition: id => {
+        return axios.get("/api/conditions/" + id);
     },
     getAllAbilityScores: () => {
-        return $.ajax({
-            url: "api/ability-scores",
-            method: "GET"
-        })
+        return axios.get("/api/ability-scores");
     },
-    getAbilityScore: (id) => {
-        return $.ajax({
-            url: "api/ability-scores/" + id,
-            method: "GET"
-        })
+    getAbilityScore: id => {
+        return axios.get("/api/ability-scores/" + id);
     },
     getAllDamageTypes: () => {
-        return $.ajax({
-            url: "api/damage-types",
-            method: "GET"
-        })
+        return axios.get("/api/damage-types");
     },
-    getDamageType: (id) => {
-        return $.ajax({
-            url: "api/damage-types/" + id,
-            method: "GET"
-        })
+    getDamageType: id => {
+        return axios.get("/api/damage-types/" + id);
     },
     getAllMagicSchools: () => {
-        return $.ajax({
-            url: "api/magic-schools",
-            method: "GET"
-        })
+        return axios.get("/api/magic-schools");
     },
-    getMagicSchool: (id) => {
-        return $.ajax({
-            url: "api/magic-schools/" + id,
-            method: "GET"
-        })
+    getMagicSchool: id => {
+        return axios.get("/api/magic-schools/" + id);
     },
 };
 
