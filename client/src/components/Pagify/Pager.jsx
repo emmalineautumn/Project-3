@@ -26,7 +26,7 @@ function Pager(props) {
         <>
             {props.children[page]}
             <div className={positions[props.position]}>
-                <div 
+                <div
                     style={{
                         display: 'flex',
                         flexDirection: 'row',
