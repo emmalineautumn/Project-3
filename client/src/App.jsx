@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from './pages/Home';
 import NotFound from './components/NotFound';
-import CreateCampaign from './pages/CampaignCreator'
+import CreateCampaign from './pages/CampaignCreator';
 import Builder from "./components/Builder";
 import Character from "./components/Character";
 

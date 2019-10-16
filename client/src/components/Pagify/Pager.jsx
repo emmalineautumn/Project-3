@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Buttons from './Buttons';
+import Buttons from '../Buttons';
 
-export function Pager(props) {
+
+function Pager(props) {
     const [page, setPage] = useState(0);
 
     const positions = {
@@ -32,13 +33,5 @@ export function Pager(props) {
     )
 }
 
-export function Page(){
-    
-}
 
-const Pagify = {
-    Pager,
-    Page
-};
-
-export default Pagify;
+export default Pager;
