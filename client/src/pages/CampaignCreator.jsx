@@ -4,7 +4,7 @@ class CreateCampaign extends Component {
     render(){
         return (
             <div className="container grey clearfix">
-                <Pager paginate={true}>
+                <Pager paginate="dots">
                     <div>
                         Hello
                     </div>
