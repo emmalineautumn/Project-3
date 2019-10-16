@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import Buttons from './Buttons';
+import Buttons from '../Buttons';
 import Dots from './Dots';
 
-export function Pager(props) {
+
+function Pager(props) {
     const [page, setPage] = useState(0);
 
     const positions = {
@@ -25,7 +26,7 @@ export function Pager(props) {
         <>
             {props.children[page]}
             <div className={positions[props.position]}>
-                <div 
+                <div
                     style={{
                         display: 'flex',
                         flexDirection: 'row',
@@ -43,13 +44,5 @@ export function Pager(props) {
     )
 }
 
-export function Page(){
-    
-}
 
-const Pagify = {
-    Pager,
-    Page
-};
-
-export default Pagify;
+export default Pager;

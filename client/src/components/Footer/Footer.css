@@ -1,0 +1,21 @@
+#toolbox {
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+} 
+
+#toolbox li {
+  padding: 1em .5em;
+  border-top: solid thick #b71c1c;
+  margin: 0 1px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  cursor: pointer;
+}
+
+#toolbox li:hover {
+  box-shadow: 0 0 7px white;
+}
+
+#toolbox ul {
+  margin: 0;
+} 

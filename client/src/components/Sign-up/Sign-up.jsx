@@ -1,4 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import "./Sign-up.css";
+
 
 const SignUp = (props) => {
     const [user, setUser] = useState("")

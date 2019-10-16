@@ -1,0 +1,26 @@
+#userDisplay {
+    padding: .5em;
+    border-bottom-left-radius: 1em;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#userDisplayImg {
+    height: 3em;
+    width: 3em;
+    border-radius: 3em;
+}
+
+#userDisplayTwo {
+    position: relative;
+    width: 1em;
+    height: 2em;
+    top: -.5em;
+    left: -1em;
+}
+
+#userDisplay:hover {
+  box-shadow: 0 0 7px white;
+}
+
