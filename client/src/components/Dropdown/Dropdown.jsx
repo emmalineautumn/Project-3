@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import "./Dropdown.css";
+
 
 class Dropdown extends Component {
     state = {
@@ -19,10 +21,7 @@ class Dropdown extends Component {
                     }}>
                         <ul id={this.props.id} className={"dropdown-content " + this.props.size}
                             style={{
-                                position: 'relative',
-                                bottom: '-100%',
                                 display: this.state.displayDropdown ? 'flex' : 'none',
-                                flexDirection: 'column',
                             }}
                         >
                             {this.props.children}

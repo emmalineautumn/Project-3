@@ -1,0 +1,5 @@
+.dropdown-content {
+    position: relative;
+    bottom: -100%;
+    flex-direction: column;
+}

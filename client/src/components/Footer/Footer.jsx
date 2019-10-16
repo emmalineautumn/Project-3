@@ -1,15 +1,11 @@
 import React,{Component} from 'react';
+import "./Footer.css";
+
 
 class Footer extends Component {
     render () {
         return (
-            <div className="" id="toolbox"
-            style={{
-                position: 'fixed',
-                bottom: '0',
-                right: '10%'
-            }}
-            >
+            <div className="" id="toolbox">
                 <ul 
                 style= {{
                     display: 'flex'
