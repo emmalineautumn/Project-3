@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Buttons from '../Buttons';
-import Dots from './Dots';
+import Dots from '../Dots';
 
 
 function Pager(props) {
