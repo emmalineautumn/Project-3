@@ -10,6 +10,7 @@ import CreateCampaign from './pages/CampaignCreator';
 import Toolbox from "./components/Toolbox";
 import CharacterBuilder from "./pages/CharacterBuilder";
 
+
 class App extends Component {
   state = {
     toolbox: 'none'
