@@ -7,12 +7,13 @@ import API from '../utils/API';
 class CharacterBuilder extends Component {
     state = {
         character: {
-            name: "",
-            race: 18,
-            class: 0,
-            baseStats: [],
-            description: "",
-            backStory: ""
+            Name: "",
+            Race: "",
+            RaceID: 0,
+            Class: "",
+            ClassID: 0,
+            Stats: "",
+            Background: "",
         }
     }
 
@@ -29,7 +30,7 @@ class CharacterBuilder extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <Builder updateCharacter={this.handleCharacterChange} />
+                    <Builder updateCharacter={this.handleCharacterChange} character={this.state.character} />
                     <Character character={this.state.character} />
                 </div>
             </div>

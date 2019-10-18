@@ -23,3 +23,8 @@
   color: #B71C1C;
   font-size: 2.5rem;
 }
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
