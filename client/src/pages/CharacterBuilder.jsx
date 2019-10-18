@@ -28,8 +28,10 @@ class CharacterBuilder extends Component {
     render () {
         return (
             <div className="container">
-                <Builder updateCharacter={this.handleCharacterChange} />
-                <Character character={this.state.character} />
+                <div className="row">
+                    <Builder updateCharacter={this.handleCharacterChange} />
+                    <Character character={this.state.character} />
+                </div>
             </div>
         );
     }
