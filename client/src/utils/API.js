@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = {
-    getAllClassses: () => {
+    getAllClasses: () => {
         return axios.get("/api/classes");
     },
     getClasses: id => {

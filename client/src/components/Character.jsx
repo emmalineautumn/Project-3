@@ -16,7 +16,7 @@ class Character extends Component {
                 margin: "1rem",
                 boxShadow: "7px 10px 12px -5px",
                 textAlign: "center",
-                float: "right",
+                float: "left",
                 overflow: "hidden",
                 marginTop: "5%",
                 marginLeft: "10%"            }}>
