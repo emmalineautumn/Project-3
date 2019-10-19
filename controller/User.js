@@ -7,8 +7,9 @@ module.exports = {
       .catch(err => res.status(502).json(err))
   },
   create: function (req, res) {
+    let data = req.body
     db.User
-      .create(req.body)
+      .create(data)
       .then(results => res.json(results))
       .catch(err => res.status(507).json(err))
   },
