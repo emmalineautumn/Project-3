@@ -55,10 +55,10 @@ class Builder extends Component {
       return(
      <div className="Builder col l6 grey clearfix">
       <Pager paginate="dots">
-        <div className="characterName">
+            <div className="Builder-title">
           {/* Character Name */}
           <h1>{this.state.Name}</h1>
-          <input name="Name" value={this.state.Name} onChange={this.handleTextChange} />
+          <input id="characterName" name="Name" value={this.state.Name} onChange={this.handleTextChange} />
         </div>
         <div className="characterRaces">
               {this.state.Races.map(result => <Button title={result.name} />)}
