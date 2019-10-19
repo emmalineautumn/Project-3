@@ -26,11 +26,8 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.7.1",
     "passport": "^0.4.0",
-<<<<<<< HEAD
-    "passport-local": "^1.0.0"
-=======
+    "passport-local": "^1.0.0",
     "react": "^16.10.2",
     "react-redux": "^7.1.1"
->>>>>>> b1b0e97795ed6e2d8d922029716a1c995ba40a90
   }
 }
