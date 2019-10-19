@@ -7,7 +7,6 @@ import Button from "../Buttons"
 
 class Builder extends Component {
     state = {
-<<<<<<< HEAD
       Name: "",
       Race: "",
       RaceID: 0,
@@ -17,15 +16,6 @@ class Builder extends Component {
       Background: "",
       Classes: [],
       Races: [],
-=======
-        Name: "",
-        Race: "",
-        Class: "",
-        Stats: "",
-        Background: "",
-        Classes: [],
-        Races: [],
->>>>>>> master
     }
 
     submit(event) {
