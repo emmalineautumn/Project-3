@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../Builder';
-// import '../App.css';
 import './Character.css';
 
 
