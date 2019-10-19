@@ -1,7 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../App.css';
-import Builder from "../components/Builder";
-import Character from "../components/Character";
 
 class Home extends Component {
     render() {
@@ -13,8 +11,6 @@ class Home extends Component {
                 fontFamily: "Grenze"
               }}
             >
-              <Builder />
-              <Character />
             </div>
           </div>
         );

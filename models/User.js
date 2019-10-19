@@ -1,4 +1,5 @@
 let mongoose = require("mongoose");
+let bcrypt = require("bcrypt");
 
 let Schema = mongoose.Schema;
 
@@ -30,6 +31,10 @@ let UserSchema = new Schema({
     ref: "User"
   }]
 });
+
+UserSchema.methods.hashPass = password => {
+  return bcrypt.hashSync(password, 8)
+}
 
 let User = mongoose.model("User", UserSchema);
 
