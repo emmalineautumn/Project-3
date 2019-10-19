@@ -19,6 +19,11 @@ let CharacterSchema = new Schema({
         type: String,
         required: true
     },
+    experience: {
+        type: Number,
+        required: true,
+        default: 0
+    },
     maxHealth: {
         type: Number,
         required: true
