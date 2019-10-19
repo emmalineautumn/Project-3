@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import {Pager, Page} from '../components/Pagify';
-
+import { Pager, Page } from "../components/Pagify";
 class CreateCampaign extends Component {
     render(){
         return (
             <div className="container grey clearfix">
-                <Pager paginate={true}>
+                <Pager paginate="dots">
                     <div>
                         Hello
                     </div>

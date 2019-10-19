@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import Dropdown from './Dropdown';
-import "../App.css";
+import Dropdown from '../Dropdown';
+import "../../App.css";
+import "./Nav.css";
+
 
 
 class NavBar extends Component {

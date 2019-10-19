@@ -4,7 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-#toolbox li {
+/* #toolbox li {
   padding: 1em .5em;
   border-top: solid thick #b71c1c;
   margin: 0 1px;
@@ -18,7 +18,7 @@ body {
 
 #toolbox ul {
   margin: 0;
-}
+} */
 
 #userDisplay:hover {
   box-shadow: 0 0 7px white;
@@ -32,12 +32,14 @@ body {
   color: black;
 }
 
+.dropdown-content.small a {
+  padding: 3px 1.5em;
+  color: #b71c1c;
+}
+
 .dropdown-content.small li {
   min-height: auto;
   background-color: whitesmoke;
 }
 
-.dropdown-content.small a {
-  padding: 3px 1.5em;
-  color: #b71c1c;
-}
+
