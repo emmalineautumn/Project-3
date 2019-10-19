@@ -7,7 +7,7 @@ import Button from "../Buttons"
 
 class Builder extends Component {
     state = {
-      Name: "",
+      Name: "Moar Wrightbroad",
       Race: "",
       Class: "",
       Stats: "",
@@ -19,7 +19,6 @@ class Builder extends Component {
     submit(event){
       event.preventDefault();
       if(this.state.Name.length === 0){
-        console.log("Character needs a name!");
       }
       else {
         this.submitInfo();
@@ -54,7 +53,7 @@ class Builder extends Component {
 
     render() {
       return(
-     <div className="col l6 grey clearfix">
+     <div className="Builder col l6 grey clearfix">
       <Pager paginate="dots">
         <div className="characterName">
           {/* Character Name */}

@@ -10,6 +10,7 @@
     overflow: hidden;
     margin-top: 5%;
     margin-left: 10;
+    flex-direction: row;
 }
 
 .Character-image {

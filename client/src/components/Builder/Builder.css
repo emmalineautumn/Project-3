@@ -11,6 +11,7 @@
   margin-top: 5%;
   margin-left: 10%;
   font-family: 'Grenze', sans-serif;
+  flex-direction: row;
 }
 
 .Builder-attributes {
