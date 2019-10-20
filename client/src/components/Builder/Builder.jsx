@@ -84,7 +84,7 @@ class Builder extends Component {
           <Pager paginate="dots" submit>
             <div className="characterName">
               {/* Character Name */}
-              <h1>{this.state.Name || "Character Name"}</h1>
+              <h1>{this.props.character.Name || "Character Name"}</h1>
               <div className="col s12 input-field">
                 <input type="text" name="Name" value={this.props.character.Name} onChange={this.handleTextChange} />
               </div>
