@@ -33,7 +33,7 @@ let CharacterSchema = new Schema({
         required: true,
         default: Schema.maxHealth
     },
-    stats: [{
+    stats: {
         strength: {
             type: Number,
             required: true
@@ -61,7 +61,7 @@ let CharacterSchema = new Schema({
             type: Number,
             required: true
         }
-    }],
+    },
     spells: [{
         type: String,
         required: true
