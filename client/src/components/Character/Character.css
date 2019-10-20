@@ -1,12 +1,12 @@
 .Character {
     background-color: rgb(144, 144, 144);
     border-radius: 3px;
-    width: 500px;
+    /* width: 500px; */
     padding: 10px;
-    margin: 1rem;
+    /* margin: 1rem; */
     box-shadow: 7px 10px 12px -5px;
     text-align: center;
-    float: right;
+    /* float: right; */
     overflow: hidden;
     margin-top: 5%;
     margin-left: 10;
@@ -17,6 +17,10 @@
     align-items: center;
     border-radius: 3px;
     margin-bottom: 1rem;
+}
+
+.Character-image img {
+    width: 500px;
 }
 
 .Character-title {
