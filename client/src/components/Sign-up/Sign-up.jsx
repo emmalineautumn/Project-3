@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import "./Sign-up.css";
 import dbAPI from "../../utils/dbAPI"
 import Button from "../Buttons"
 
@@ -8,20 +7,29 @@ const SignUp = (props) => {
     const [password, setPassword] = useState("")
     const [confirmPass, setConfirmPass] = useState("")
     const [email, setEmail] = useState("")
-    const [userData, setUserData] = useState({
-        username: user,
-        password: confirmPass,
-        email: email
-    })
 
-    const createCharacter = () => {
-        dbAPI.createUser(userData)
+    const createUser = (user) => {
+        dbAPI.createUser(user)
+            .then(saved => console.log(saved))
+            .catch(err => console.log(err))
+    }
+
+    const handleUserCreation = event => {
+        event.preventDefault()
+        const userData = {
+            username: user,
+            password: confirmPass,
+            email: email,
+            date: Date.now()
+        }
+        createUser(userData)
+        alert("Welcome" + user)
     }
 
     return (
         <div className="container">
             <div className="row">
-                <form className="col s12">
+                <form className="col s12" method="POST">
                     <div className="row">
                         <div className="input-field col s6">
                             <input id="username" name="username" type="text" className="validate white-text" value={user} onChange={event => setUser(event.target.value)} />
@@ -46,7 +54,7 @@ const SignUp = (props) => {
                             <label for="email">Email</label>
                         </div>
                     </div>
-                    <Button title="Create Account" clickThis={createCharacter} />
+                    <input className="btn" type="submit" onClick={handleUserCreation} />
                 </form>
             </div>
         </div>

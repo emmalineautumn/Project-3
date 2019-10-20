@@ -4,10 +4,12 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose")
 const router = require("./routes")
-var passport = require("passport"),
+const passport = require("passport"),
   LocalStrategy = require("passport-local").Strategy;
-var bcrypt = require("bcrypt");
-var session = require("express-session");
+const bcrypt = require("bcrypt");
+const session = require("express-session");
+const dbUser = require("./controller/User")
+
 // Connect to MongoDB
 
 // Define middleware here
@@ -25,8 +27,8 @@ passport.use(
       usernameField: "email",
       passwordField: "password"
     },
-    function(email, password, done) {
-      db.Customers.findAll({ where: { Email: email.toLowerCase() } })
+    function(username, password, done) {
+      dbUser.find({ username: username })
         .then(function(user) {
           if (!user) {
             console.log("wrong email");
@@ -59,10 +61,18 @@ if (process.env.NODE_ENV === "production") {
 app.use(express.static('client/public'))
 
 // Define API routes here
+app.post(
+  "/sign-in",
+  passport.authenticate("local", {
+    session: true,
+    successRedirect: "/",
+    failureRedirect: "/404"
+  })
+);
 require("./routes/dndRoutes")(app);
 app.use(router)
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/DungeonsAndDragonsBeotches");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/DungeonsAndDragons");
 // Send every other request to the React app
 // Define any API routes before this runs
 if (process.env.NODE_ENV === 'production') {

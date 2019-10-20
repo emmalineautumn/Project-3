@@ -31,7 +31,7 @@ let CharacterSchema = new Schema({
     currentHealth: {
         type: Number,
         required: true,
-        default: maxHealth
+        default: Schema.maxHealth
     },
     stats: [{
         strength: {
