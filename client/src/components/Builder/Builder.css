@@ -24,7 +24,11 @@
   font-size: 2.5rem;
 }
 
-.input-field input[type=text]:focus {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
+.Builder input[type=text]:focus {
+  border-bottom: 1px solid #b71c1c !important;
+  box-shadow: 0 1px 0 0 #b71c1c !important;
+}
+
+.Builder label {
+  font-size: 1.5em;
 }

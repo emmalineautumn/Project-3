@@ -18,6 +18,24 @@ class CharacterBuilder extends Component {
     }
 
     handleCharacterChange = (property, value) => {
+        switch (property) {
+            case 'strength':
+            case 'constitution':
+            case 'dexterity':
+            case 'intelligence':
+            case 'wisdom':
+            case 'charisma':
+                this.setState({
+                    character: {
+                        ...this.state.character,
+                        stats: {
+                            ...this.state.character.Stats,
+                            [property]: value
+                        }
+                    }
+                });
+                
+        }
         this.setState({
             character: {
                 ...this.state.character,

@@ -10,7 +10,7 @@ class Character extends Component {
     render() {
         let imgSrc = `${CHAR_API}.png`;
         return (
-            <div className="Character ">
+            <div className="Character col L6">
                 <div className="Character-image">
                     <img src={imgSrc} />
                 </div>
