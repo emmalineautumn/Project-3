@@ -81,7 +81,7 @@ class Builder extends Component {
     return (
       <div className="col l6">
         <div className="grey clearfix Builder">
-          <Pager paginate="dots">
+          <Pager paginate="dots" submit>
             <div className="characterName">
               {/* Character Name */}
               <h1>{this.state.Name || "Character Name"}</h1>
