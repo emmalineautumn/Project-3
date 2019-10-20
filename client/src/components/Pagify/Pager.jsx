@@ -39,6 +39,7 @@ function Pager(props) {
                 {page > 0 && <Buttons colors={['red', 'darken-4']} clickThis={() => setPage(page - 1)} title="Previous" />}
                 {props.paginate === 'numbers' && props.children.map((child, i) => <Buttons colors={i === page ? ['red', 'darken-4', 'white-text'] : ['grey', 'lighten-3', 'black-text']} clickThis={() => setPage(i)} title={i + 1} />)}
                 {page < props.children.length - 1 && <Buttons colors={['red', 'darken-4']} clickThis={() => setPage(page + 1)} title="Next" />}
+                {page === props.children.length - 1 && <Buttons colors={['red', 'darken-4']} clickThis={this.props.submit} title="Submit" />}
             </div>
         </>
     )

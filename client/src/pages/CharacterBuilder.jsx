@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Builder from '../components/Builder';
 import Character from '../components/Character';
 
-import API from '../utils/API';
-
 class CharacterBuilder extends Component {
     state = {
         character: {
@@ -12,8 +10,15 @@ class CharacterBuilder extends Component {
             RaceID: 0,
             Class: "",
             ClassID: 0,
-            Stats: "",
-            Background: "",
+            Stats: {
+                strength: '',
+                constitution: '',
+                dexterity: '',
+                intelligence: '',
+                wisdom: '',
+                charisma: ''
+            },
+            Background: ""
         }
     }
 
@@ -28,20 +33,21 @@ class CharacterBuilder extends Component {
                 this.setState({
                     character: {
                         ...this.state.character,
-                        stats: {
+                        Stats: {
                             ...this.state.character.Stats,
-                            [property]: value
+                            [property]: parseInt(value)
                         }
                     }
                 });
-                
+                break;
+            default:
+                this.setState({
+                    character: {
+                        ...this.state.character,
+                        [property]: value
+                    }
+                });
         }
-        this.setState({
-            character: {
-                ...this.state.character,
-                [property]: value
-            }
-        });
     }
 
     render () {
