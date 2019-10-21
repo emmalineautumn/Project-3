@@ -2,34 +2,59 @@ import React, { Component } from 'react';
 import Builder from '../components/Builder';
 import Character from '../components/Character';
 
-import API from '../utils/API';
-
 class CharacterBuilder extends Component {
     state = {
         character: {
-            name: "",
-            race: 18,
-            class: 0,
-            baseStats: [],
-            description: "",
-            backStory: ""
+            Name: "",
+            Race: "",
+            RaceID: 0,
+            Class: "",
+            ClassID: 0,
+            Stats: {
+                strength: '',
+                constitution: '',
+                dexterity: '',
+                intelligence: '',
+                wisdom: '',
+                charisma: ''
+            },
+            Background: ""
         }
     }
 
     handleCharacterChange = (property, value) => {
-        this.setState({
-            character: {
-                ...this.state.character,
-                [property]: value
-            }
-        });
+        switch (property) {
+            case 'strength':
+            case 'constitution':
+            case 'dexterity':
+            case 'intelligence':
+            case 'wisdom':
+            case 'charisma':
+                this.setState({
+                    character: {
+                        ...this.state.character,
+                        Stats: {
+                            ...this.state.character.Stats,
+                            [property]: parseInt(value)
+                        }
+                    }
+                });
+                break;
+            default:
+                this.setState({
+                    character: {
+                        ...this.state.character,
+                        [property]: value
+                    }
+                });
+        }
     }
 
     render () {
         return (
             <div className="container">
                 <div className="row">
-                    <Builder updateCharacter={this.handleCharacterChange} />
+                    <Builder updateCharacter={this.handleCharacterChange} character={this.state.character} />
                     <Character character={this.state.character} />
                 </div>
             </div>

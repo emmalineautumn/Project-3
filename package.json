@@ -17,7 +17,7 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "install-peers": "^1.0.3",
-    "nodemon": "^1.18.7"
+    "nodemon": "^1.19.4"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.3",
@@ -34,6 +34,8 @@
     "passport-local": "^1.0.0",
     "react": "^16.10.2",
     "react-component-whiteboard": "^1.1.1",
+    "react-dom": "^16.10.2",
+    "react-modal-wrapper": "^0.5.4",
     "react-redux": "^7.1.1"
   }
 }

@@ -7,8 +7,9 @@ import Footer from "./components/Footer";
 import Home from './pages/Home';
 import NotFound from './components/NotFound';
 import CreateCampaign from './pages/CampaignCreator';
-import Toolbox from "./components/Toolbox";
+// import Toolbox from "./components/Toolbox";
 import CharacterBuilder from "./pages/CharacterBuilder";
+import SignUp from "./pages/SignUp"
 
 
 class App extends Component {
@@ -26,9 +27,10 @@ class App extends Component {
               <Route path="/" exact component={Home} />
               <Route path="/campaigns/create" exact component={CreateCampaign} />
               <Route path="/character/create" component={CharacterBuilder} />
+              <Route path="/sign-up" exact component={SignUp} />
               <Route path="/*" component={NotFound} />
             </Switch>
-          <Toolbox toolbox={this.state.toolbox} />
+          {/* <Toolbox toolbox={this.state.toolbox} /> */}
           <Footer />
         </Router>
       </div>
