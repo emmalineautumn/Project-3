@@ -31,9 +31,6 @@ app.use(express.static('client/public'))
 
 // Define API routes here
 require("./routes/dndRoutes")(app);
-router.post('/login', (req, res, next) => {
-  passport.authenticate('local')(req, res, next);
-});
 app.use(router)
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/DungeonsAndDragons", { useNewUrlParser: true })

@@ -11,7 +11,7 @@ const SignUp = (props) => {
     const handleLogin = event => {
         event.preventDefault();
         axios
-            .post("/login", {
+            .post("/api/user/login", {
                 username: user,
                 password: password
             })

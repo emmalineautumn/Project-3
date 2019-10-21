@@ -10,18 +10,7 @@ module.exports = {
   },
   session: function (req, res) {
     console.log(req.user)
-    res.json(req.user)
-  },
-  login: function (req, res) {
-    console.log('routes/user.js, login, req.body: ');
-    console.log(req.body)
-    console.log(req.user)
-    passport.authenticate('local');
-    console.log('logged in', req.user);
-      let userInfo = {
-          username: req.user.username
-      };
-    res.send(userInfo);
+    res.json(req.session)
   },
   create: function (req, res) {
     let data = req.body
