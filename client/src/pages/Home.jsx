@@ -8,6 +8,7 @@ class Home extends Component {
         return (
           <div className="container grey lighten-5">
             <div
+              id="headerDiv"
               className="row"
               style={{
                 fontFamily: "Grenze"
@@ -22,5 +23,4 @@ class Home extends Component {
         );
     }
 }
-
 export default Home;

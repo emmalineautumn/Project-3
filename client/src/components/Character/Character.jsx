@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../Builder';
-// import '../App.css';
 import './Character.css';
 
 class Character extends Component {
@@ -20,9 +19,9 @@ class Character extends Component {
                     <div style={{
                         fontFamily: 'Grenze'
                     }}>
+                        <div className="Character-data">Gender: {this.props.character.Gender}</div>
                         <div className="Character-data">Race: {this.props.character.Race}</div>
                         <div className="Character-data">Class: {this.props.character.Class}</div>
-                        <div className="Character-data">Gender: {this.props.character.Gender}</div>
                         <div className="Character-data">Background: <p>{this.props.character.Background}</p></div>
                         {/* <div className="Character-data">Languages: {this.props.character.Languages}</div> */}
                         <div className="Character-data">Equipment: {}</div>
