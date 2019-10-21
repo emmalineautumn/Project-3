@@ -1,6 +1,5 @@
 .dropdown-content {
     position: absolute;
-    /* bottom: -100%; */
     flex-direction: row;
     left: 100%;
     top: 0%;

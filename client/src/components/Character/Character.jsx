@@ -10,25 +10,6 @@ class Character extends Component {
     }
     render() {
         return (
-<<<<<<< HEAD
-          <div className="Character col l6 grey clearfix">
-            <div className="Character-image">
-              <img src={imgSrc} />
-            </div>
-            <h1 className="Character-title">Moar Wightbroad{}</h1>
-            <div
-              style={{
-                fontFamily: "Grenze"
-              }}
-            >
-              <div className="Character-data">Class: {}</div>
-              <div className="Character-data">Race: {}</div>
-              <div className="Character-data">Race: {}</div>
-              <div className="Character-data">Gender: {}</div>
-              <div className="Character-data">BG: {}</div>
-              <div className="Character-data">Languages: {}</div>
-              <div className="Character-data">Equipment: {}</div>
-=======
             <div className="col l6">
                 <div className="Character grey">
                     <div className="Character-image">
@@ -38,15 +19,14 @@ class Character extends Component {
                     <div style={{
                         fontFamily: 'Grenze'
                     }}>
+                        <div className="Character-data">Gender: {this.props.character.Gender}</div>
                         <div className="Character-data">Race: {this.props.character.Race}</div>
                         <div className="Character-data">Class: {this.props.character.Class}</div>
-                        <div className="Character-data">Gender: {this.props.character.Gender}</div>
                         <div className="Character-data">Background: <p>{this.props.character.Background}</p></div>
                         {/* <div className="Character-data">Languages: {this.props.character.Languages}</div> */}
                         <div className="Character-data">Equipment: {}</div>
                     </div>
                 </div>
->>>>>>> master
             </div>
         );
     }

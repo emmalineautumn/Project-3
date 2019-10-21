@@ -82,10 +82,10 @@ class Builder extends Component {
       <div className="col l6">
         <div className="grey clearfix Builder">
           <Pager paginate="dots" submit>
-            <div className="characterName">
+            <div>
               {/* Character Name */}
               <h1>{this.props.character.Name || "Character Name"}</h1>
-              <div className="col s12 input-field">
+              <div className="characterName col s12 input-field">
                 <input
                   type="text"
                   name="Name"
@@ -113,6 +113,17 @@ class Builder extends Component {
                 }
                 clickThis={() => {
                   this.props.updateCharacter("Gender", "Female");
+                }}
+              />
+              <Button
+                title={"Non-Binary"}
+                colors={
+                  this.props.character.Gender === "Non-Binary"
+                    ? ["red", "darken-4", "text-white"]
+                    : ["grey", "darken-3", "text-black"]
+                }
+                clickThis={() => {
+                  this.props.updateCharacter("Gender", "Non-Binary");
                 }}
               />
             </div>
