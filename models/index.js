@@ -1,5 +1,5 @@
 module.exports = {
-    Campaign: require("../controller/Campaign"),
-    Character: require("../controller/Character"),
-    User: require("../controller/User")
+    Campaign: require("./Campaign"),
+    Character: require("./Character"),
+    User: require("./User")
 };
