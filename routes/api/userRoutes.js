@@ -5,6 +5,9 @@ router.route('/')
     .get(User.findAll)
     .post(User.create);
 
+router.route('/me')
+    .get(User.session);
+
 router.route('/:id')
     .delete(User.delete);
 

@@ -1,46 +1,56 @@
-import React, {useState} from 'react';
-import dbAPI from "../../utils/dbAPI"
+import React, { useState } from 'react';
+import dbAPI from "../../utils/dbAPI";
+import { Redirect } from 'react-router-dom'
+import axios from 'axios';
 
 const SignUp = (props) => {
     const [user, setUser] = useState("")
     const [password, setPassword] = useState("")
-
-    const login = userData => {
-        dbAPI.getUser(userData)
-            .then(result => console.log(result))
-            .catch(err => console.log(err))
-    }
+    const [redirectTo, setRedirectTo] = useState("")
 
     const handleLogin = event => {
         event.preventDefault();
-        const userData = {
-            username: user, 
-            password: password
-        }
-        login(userData);
+        axios
+            .post("/login", {
+                username: user,
+                password: password
+            })
+            .then(response => {
+                console.log("login response: ")
+                console.log(response)
+                setRedirectTo("/")
+            }).catch(error => {
+                console.log("login error: SignIn Component")
+                console.log(error)
+            })
+
     }
 
-    return (
-        <div className="container">
-            <div className="row">
-                <form className="col s12" action ="/sign-in" method="GET">
-                    <div className="row">
-                        <div className="input-field col s6">
-                            <input id="username" name="username" type="text" className="validate" value={user} onChange={event => setUser(event.target.value)} />
-                            <label for="username">Username</label>
+    if (redirectTo) {
+        return <Redirect to={{ pathname: redirectTo }} />
+    } else {
+        return (
+            <div className="container">
+                <div className="row">
+                    <form className="col s12">
+                        <div className="row">
+                            <div className="input-field col s6">
+                                <input id="usernameLogin" name="username" type="text" className="validate" value={user} onChange={event => setUser(event.target.value)} />
+                                <label htmlFor="username">Username</label>
+                            </div>
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="input-field col s12">
-                            <input id="password" type="password" name="password" classNameName="validate" value={password} onChange={event => setPassword(event.target.value)} />
-                            <label for="password">Password</label>
+                        <div className="row">
+                            <div className="input-field col s12">
+                                <input id="passwordLogin" type="password" name="password" className="validate" value={password} onChange={event => setPassword(event.target.value)} />
+                                <label htmlFor="password">Password</label>
+                            </div>
                         </div>
-                    </div>
-                    <input className="btn" type="submit" onClick={handleLogin} />
-                </form>
+                        <input className="btn" type="submit" onClick={handleLogin} />
+                    </form>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default SignUp

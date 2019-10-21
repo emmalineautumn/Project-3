@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Modal from '../components/Modal'
 import SignIn from '../components/SignIn'
+import SignUp from '../components/Sign-up'
 
 
 export default class SignUpPage extends Component {
@@ -19,12 +20,9 @@ export default class SignUpPage extends Component {
     render() {
         return (
             <>
-                <Modal show={this.state.show} handleClose={this.hideModal}>
                     <SignIn />
-                </Modal>
-                <button type="button" onClick={this.showModal}>
-                    open
-                </button>
+                    <hr />
+                    <SignUp />
             </>
         )
     }

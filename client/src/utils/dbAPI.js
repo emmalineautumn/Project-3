@@ -13,8 +13,8 @@ export default {
   createCampaign: campaignData => {
     return axios.post("/api/campaign", campaignData);
   },
-  getAllUsers: () => {
-    return axios.get("/api/user");
+  getAllUsers: userData => {
+    return axios.get("/api/user", userData);
   },
   getUser: id => {
     return axios.get("/api/user/" + id);
