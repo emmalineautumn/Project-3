@@ -18,7 +18,6 @@ class Home extends Component {
               <Link to="/character/create">
                 <Buttons title="Yes, please!" colors={['red', 'darken-4']} />
               </Link>
-              <Buttons title="user" clickThis={API.userSession} />
             </div>
           </div>
         );
