@@ -9,8 +9,8 @@ module.exports = {
       .catch(err => res.status(502).json(err))
   },
   session: function (req, res) {
-    console.log(req.user)
-    res.json(req.session)
+    console.log(req.session.passport.user)
+    res.json(req.session.passport.user)
   },
   create: function (req, res) {
     let data = req.body

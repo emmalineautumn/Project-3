@@ -22,6 +22,9 @@ export default {
   deleteUser: id => {
     return axios.delete("/api/user/" + id);
   },
+  userSession: () => {
+    return axios.get("/api/user/me")
+  },
   createUser: userData => {
     return axios.post("/api/user", userData);
   },

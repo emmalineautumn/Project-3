@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Link} from 'react-router-dom'
 import '../App.css';
 import Buttons from '../components/Buttons';
+import API from '../utils/dbAPI'
 
 class Home extends Component {
     render() {
@@ -17,6 +18,7 @@ class Home extends Component {
               <Link to="/character/create">
                 <Buttons title="Yes, please!" colors={['red', 'darken-4']} />
               </Link>
+              <Buttons title="user" clickThis={API.userSession} />
             </div>
           </div>
         );
