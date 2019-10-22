@@ -13,14 +13,17 @@ export default {
   createCampaign: campaignData => {
     return axios.post("/api/campaign", campaignData);
   },
-  getAllUsers: () => {
-    return axios.get("/api/user");
+  getAllUsers: userData => {
+    return axios.get("/api/user", userData);
   },
   getUser: id => {
     return axios.get("/api/user/" + id);
   },
   deleteUser: id => {
     return axios.delete("/api/user/" + id);
+  },
+  userSession: () => {
+    return axios.get("/api/user/me")
   },
   createUser: userData => {
     return axios.post("/api/user", userData);
