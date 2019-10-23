@@ -1,5 +1,24 @@
 .dropdown-content {
-    position: relative;
-    bottom: -100%;
-    flex-direction: column;
+    position: absolute;
+    flex-direction: row;
+    left: 100%;
+    top: 0%;
+}
+
+.dropdown-content {
+  opacity: 1;
+}
+
+.dropdown-content li>a {
+  color: black;
+}
+
+.dropdown-content.small a {
+  padding: 3px 1.5em;
+  color: #b71c1c;
+}
+
+.dropdown-content.small li {
+  min-height: auto;
+  background-color: whitesmoke;
 }

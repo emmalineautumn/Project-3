@@ -5,23 +5,23 @@ import Buttons from '../components/Buttons';
 import API from '../utils/dbAPI'
 
 class Home extends Component {
-  render() {
-    return (
-        <div className="container grey lighten-5">
-          <div
-            className="row"
-            style={{
-              fontFamily: "Grenze"
-            }}
-          >
-            <h1>You currently do not have any characters. Would you like to make one now?</h1>
-            <Link to="/character/create">
-              <Buttons title="Yes, please!" colors={['red', 'darken-4']} />
-            </Link>
+    render() {
+        return (
+          <div className="container grey lighten-5">
+            <div
+              id="headerDiv"
+              className="row"
+              style={{
+                fontFamily: "Grenze"
+              }}
+            >
+              <h1>You currently do not have any characters. Would you like to make one now?</h1>
+              <Link to="/character/create">
+                <Buttons title="Yes, please!" colors={['red', 'darken-4']} />
+              </Link>
+            </div>
           </div>
-        </div>
     );
   }
 }
-
 export default Home;
