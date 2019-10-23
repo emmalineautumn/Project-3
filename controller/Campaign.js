@@ -11,7 +11,23 @@ module.exports = {
     db.Campaign
       .create(req.body)
       .then(results => res.json(results))
-      .catch(err => res.status(507).json(err))
+      .catch(err => res.status(502).json(err))
+  },
+  createCampaign: (req, res) => {
+    let data = req.body
+    db.Campaign.create({
+      name: data.name,
+      DM: data.userId
+    })
+    .then(function (dbCampaign) {
+      return db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'campaigns': [dbCampaign._id] } }, { "new": true, "upsert": true });
+    })
+    .then(function (dbUser) {
+      res.json(dbUser)
+    })
+    .catch(function (err) {
+      res.json(err)
+    })
   },
   update: (req, res) => {
     db.Campaign
