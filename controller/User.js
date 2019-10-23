@@ -48,7 +48,7 @@ module.exports = {
           message: 'Error: Account already exist.'
         });
       }
-      const newUser = new User();
+      const newUser = new db.User();
       newUser.email = email;
       newUser.username = username;
       newUser.password = newUser.generateHash(password);
