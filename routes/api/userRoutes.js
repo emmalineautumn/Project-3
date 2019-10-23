@@ -17,6 +17,9 @@ router.route('/login')
         }
     );
 
+router.route('/character')
+        .post(User.populateCharacter)
+
 router.route('/:id')
     .delete(User.delete);
 

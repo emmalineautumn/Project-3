@@ -1,9 +1,9 @@
-const User = require('../models/User');
+const db = require('../models');
 const passport = require("passport")
 
 module.exports = {
   findAll: function (req, res) {
-    User
+    db.User
       .find({ username: req.body.username })
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(502).json(err))
@@ -34,7 +34,7 @@ module.exports = {
     email = email.toLowerCase();
     email = email.trim();
 
-    User.find({
+    db.User.find({
       email: email
     }, (err, previousUsers) => {
       if (err) {
@@ -65,6 +65,74 @@ module.exports = {
         });
       });
     });
+  },
+  populateCharacter: (req, res) => {
+    db.User.findOne({ _id: req.body.id })
+    .populate("characters")
+    .then(function (foundOne) {
+      res.json(foundOne)
+    })
+    .catch(function (err) {
+      res.json(err)
+    })
+  },
+  populateCampaign: (req, res) => {
+    db.User.findOne({ _id: req.body.id })
+    .populate("campaigns")
+    .then(function (foundOne) {
+      res.json(foundOne)
+    })
+    .catch(function (err) {
+      res.json(err)
+    })
+  },
+  createCampaign: (req, res) => {
+    let data = req.body
+    db.Campaign.create({
+      name: data.name,
+      DM: data.userId
+    })
+    .then(function (dbCampaign) {
+      return db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'campaigns': [dbCampaign._id] } }, { "new": true, "upsert": true });
+    })
+    .then(function (dbUser) {
+      res.json(dbUser)
+    })
+    .catch(function (err) {
+      res.json(err)
+    })
+  },
+  createCharacter: (req, res) => {
+    let data = req.body
+    db.Character.create({
+      name: data.name,
+      class: data.class,
+      race: data.race,
+      characterAppearance: data.characterAppearance,
+      maxHealth: data.maxHealth,
+      stats: {
+        strength: data.strength,
+        dexterity: data.dexterity,
+        constitution: data.constitution,
+        intelligence: data.intelligence,
+        wisdom: data.wisdom,
+        initiative: data.initiative,
+        charisma: data.charisma
+      },
+      spells: [data.spells],
+      alignment: data.alignment,
+      NPC: data.NPC
+    })
+    .then(function (dbCharacter) {
+      db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(req.body.userId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true });
+      db.Campaign.findOneAndUpdate({ _id: mongoose.Types.ObjectId(req.body.campaignId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true });
+    })
+    .then(function (dbUser) {
+      res.json(dbUser)
+    })
+    .catch(function (err) {
+      res.json(err)
+    })
   },
   update: (req, res) => {
     User
