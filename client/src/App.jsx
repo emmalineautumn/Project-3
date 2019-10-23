@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createContext } from "react";
 import "./App.css";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from "./components/Nav";
@@ -10,15 +10,25 @@ import CreateCampaign from './pages/CampaignCreator';
 // import Toolbox from "./components/Toolbox";
 import CharacterBuilder from "./pages/CharacterBuilder";
 import SignUp from "./pages/SignUp"
+import dbAPI from './utils/dbAPI'
+
+
+// call this context by putting "static contextType = UserSession" on the page and then pass into {this.context}
+let userValue
+dbAPI.getUser()
+  .then(user => userValue = user)
+  .catch(err => console.log(err));
+const UserSession = createContext(userValue)
 
 
 class App extends Component {
   state = {
-    toolbox: 'none'
+    toolbox: 'none',
   }
 
   render() {
     return (
+      <UserSession.Provider value={this.state.userValue}>
       <div className="App">
         <Router>
           <Header />
@@ -34,6 +44,7 @@ class App extends Component {
           <Footer />
         </Router>
       </div>
+      </UserSession.Provider>
     );
   }
 }

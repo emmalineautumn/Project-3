@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {BrowserRouter as Router, Link} from 'react-router-dom'
+import React, { Component, createContext } from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import '../App.css';
 import Buttons from '../components/Buttons';
 import API from '../utils/dbAPI'
@@ -21,7 +21,7 @@ class Home extends Component {
               </Link>
             </div>
           </div>
-        );
-    }
+    );
+  }
 }
 export default Home;

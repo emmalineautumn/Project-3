@@ -28,6 +28,9 @@ export default {
   createUser: userData => {
     return axios.post("/api/user", userData);
   },
+  populateCharacter: characterData => {
+    return axios.post("/api/user/character", characterData)
+  },
   getAllCharacters: () => {
     return axios.get("/api/character");
   },
