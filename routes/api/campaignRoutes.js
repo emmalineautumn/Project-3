@@ -5,6 +5,9 @@ router.route('/')
     .get(Campaign.findAll)
     .post(Campaign.create);
 
+router.route('/character')
+    .post(Campaign.createCampaign)
+    
 router.route('/:id')
     .delete(Campaign.delete);
 
