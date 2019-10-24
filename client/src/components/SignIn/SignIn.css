@@ -1,8 +1,21 @@
-.signUp {
-    /* color: rgba(0, 0, 0, 0.87);
+
+.btnSignIn {
+    color: white;
+    background-color: #B71C1C;
+}
+
+.btnSignIn:hover {
+    color: rgba(0, 0, 0, 0.87);
     box-shadow: 0 0 7px black;
-    background-color: rgb(144, 144, 144);
-    color: #B71C1C; */
+    background-color: #B71C1C;
+}
+
+.input-field {
+    color: #B71C1C;
+
+}
+
+.signIn {
     color: black;
     padding: 10px;
     width: 100%;
@@ -16,15 +29,4 @@
     font-family: 'Grenze', sans-serif;
     flex-direction: row;
     justify-content: flex-start;
-}
-
-.btnSignUp {
-    color: white;
-    background-color: #B71C1C;
-}
-
-.btnSignUp:hover {
-    color: rgba(0, 0, 0, 0.87);
-    box-shadow: 0 0 7px black;
-    background-color: #B71C1C;
 }
