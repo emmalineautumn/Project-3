@@ -1,10 +1,10 @@
 const db = require('../models');
-const passport = require("passport")
+
 
 module.exports = {
   findAll: function (req, res) {
     db.User
-      .find({ username: req.body.username })
+      .find({ _id: req.body.id })
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(502).json(err))
   },
@@ -48,7 +48,7 @@ module.exports = {
           message: 'Error: Account already exist.'
         });
       }
-      const newUser = new User();
+      const newUser = new db.User();
       newUser.email = email;
       newUser.username = username;
       newUser.password = newUser.generateHash(password);

@@ -5,7 +5,7 @@ router.route('/')
     .get(Campaign.findAll)
     .post(Campaign.create);
 
-router.route('/character')
+router.route('/user')
     .post(Campaign.createCampaign)
     
 router.route('/:id')
