@@ -4,6 +4,8 @@ import "./Builder.css";
 import { Pager } from "../Pagify";
 import API from "../../utils/API";
 import Button from "../Buttons";
+import Buttons from "../Buttons";
+import UserSession from "../../App"
 
 class Builder extends Component {
   state = {
@@ -15,8 +17,12 @@ class Builder extends Component {
     Stats: {},
     Background: "",
     Classes: [],
-    Races: []
+    Races: [],
+    alignment1: '',
+    alignment2: ''
   };
+
+  static contextType = UserSession;
 
   submit(event) {
     event.preventDefault();
@@ -74,56 +80,67 @@ class Builder extends Component {
         stats[stat] = randomValue;
       }
     }
-    this.props.updateCharacter("Stats", stats);
+    this.props.updateCharacter("stats", stats);
   };
+
+  createAlignment = () => {
+    let value;
+    if (this.state.alignment1 && this.state.alignment1 === this.state.alignment2) {
+      value = 'True Neutral';
+    } else {
+      value = `${this.state.alignment1} ${this.state.alignment2}`
+    }
+
+    this.props.updateCharacter('alignment', value)
+  }
 
   render() {
     return (
       <div className="col l6">
         <div className="grey clearfix Builder">
-          <Pager paginate="dots" submit>
+          <Pager paginate="dots" submit submitAction={this.props.submitAction}>
             <div>
               {/* Character Name */}
-              <h1>{this.props.character.Name || "Character Name"}</h1>
+              <h1>{this.props.character.name || "Character Name"}</h1>
               <div className="characterName col s12 input-field">
                 <input
                   type="text"
-                  name="Name"
-                  value={this.props.character.Name}
+                  name="name"
+                  value={this.props.character.name}
                   onChange={this.handleTextChange}
                 />
               </div>
               <Button
                 title={"Male"}
                 colors={
-                  this.props.character.Gender === "Male"
+                  this.props.character.gender === "Male"
                     ? ["red", "darken-4", "text-white"]
                     : ["grey", "darken-3", "text-black"]
                 }
                 clickThis={() => {
-                  this.props.updateCharacter("Gender", "Male");
+                  this.props.updateCharacter("gender", "Male");
                 }}
               />
               <Button
                 title={"Female"}
                 colors={
-                  this.props.character.Gender === "Female"
+                  this.props.character.gender === "Female"
                     ? ["red", "darken-4", "text-white"]
                     : ["grey", "darken-3", "text-black"]
                 }
                 clickThis={() => {
-                  this.props.updateCharacter("Gender", "Female");
+                  this.props.updateCharacter("gender", "Female");
                 }}
               />
               <Button
                 title={"Non-Binary"}
                 colors={
-                  this.props.character.Gender === "Non-Binary"
+                  this.props.character.gender === "Non-Binary"
                     ? ["red", "darken-4", "text-white"]
                     : ["grey", "darken-3", "text-black"]
                 }
                 clickThis={() => {
-                  this.props.updateCharacter("Gender", "Non-Binary");
+                  this.props.updateCharacter("gender", "Non-Binary");
                 }}
               />
             </div>
@@ -134,12 +151,12 @@ class Builder extends Component {
                   key={result.id}
                   title={result.name}
                   colors={
-                    this.props.character.Race === result.name
+                    this.props.character.race === result.name
                       ? ["red", "darken-4", "text-white"]
                       : ["grey", "darken-3", "text-black"]
                   }
                   clickThis={() => {
-                    this.props.updateCharacter("Race", result.name);
+                    this.props.updateCharacter("race", result.name);
                   }}
                 />
               ))}
@@ -152,12 +169,12 @@ class Builder extends Component {
                   key={result.id}
                   title={result.name}
                   colors={
-                    this.props.character.Class === result.name
+                    this.props.character.class === result.name
                       ? ["red", "darken-4", "text-white"]
                       : ["grey", "darken-3", "text-black"]
                   }
                   clickThis={() => {
-                    this.props.updateCharacter("Class", result.name);
+                    this.props.updateCharacter("class", result.name);
                   }}
                 />
               ))}
@@ -173,13 +190,14 @@ class Builder extends Component {
                 "wisdom",
                 "charisma"
               ].map(stat => (
-                <div className="input-field col s6">
+                <div key={stat} className="input-field col s6">
                   <input
                     placeholder={`Enter value for ${stat}`}
                     autoComplete="off"
-                    type="text"
+                    type="number"
+                    max="18"
                     onChange={this.handleTextChange}
-                    value={this.props.character.Stats[stat]}
+                    value={this.props.character.stats[stat]}
                     name={stat}
                   />
                   <label className="black-text bold active" htmlFor={stat}>
@@ -205,6 +223,51 @@ class Builder extends Component {
                 value={this.props.character.Background}
                 onChange={this.handleTextChange}
               ></textarea>
+            </div>
+            <div>
+              <h1>Select your alignment</h1>
+              <div className="row">
+                {[
+                  'Lawful',
+                  'Neutral',
+                  'Chaotic'
+                ].map(alignment => <Buttons title={alignment}
+                  colors={
+                    this.state.alignment1 === alignment
+                      ? ["red", "darken-4", "text-white"]
+                      : ["grey", "darken-3", "text-black"]
+                  }
+                  clickThis={()=>{
+                    this.setState({alignment1: alignment}, ()=>
+                    this.createAlignment())
+                  }}
+                />)}
+              </div>
+              <div className="row">
+                {[
+                  'Good',
+                  'Neutral',
+                  'Evil'
+                ].map(alignment => <Buttons title={alignment}
+                  colors={
+                    this.state.alignment2 === alignment
+                      ? ["red", "darken-4", "text-white"]
+                      : ["grey", "darken-3", "text-black"]
+                  }
+                  clickThis={()=>{
+                    this.setState({alignment2: alignment}, ()=>
+                    this.createAlignment())
+                  }}
+                />)}
+              </div>
+              <div className="switch">
+                  <label>
+                    Player Character
+                    <input name="npc" value={this.props.character.npc} onClick={this.props.updateCharacter} type="checkbox" />
+                    <span className="lever"></span>
+                    Non-player Character
+                  </label>
+              </div>
             </div>
           </Pager>
         </div>
