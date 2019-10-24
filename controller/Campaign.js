@@ -1,9 +1,10 @@
 const db = require('../models');
+const mongoose = require("mongoose")
 
 module.exports = {
   findAll: function (req, res) {
     db.Campaign
-      .find({})
+      .find({ _id: req.body.id})
       .then(dbCampaign => res.json(dbCampaign))
       .catch(err => res.status(502).json(err))
   },
@@ -15,15 +16,18 @@ module.exports = {
   },
   createCampaign: (req, res) => {
     let data = req.body
+    console.log(data)
     db.Campaign.create({
       name: data.name,
       DM: data.userId
     })
     .then(function (dbCampaign) {
+      console.log(dbCampaign)
       return db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'campaigns': [dbCampaign._id] } }, { "new": true, "upsert": true });
     })
     .then(function (dbUser) {
       res.json(dbUser)
+      console.log(dbUser)
     })
     .catch(function (err) {
       res.json(err)

@@ -1,8 +1,10 @@
 const db = require('../models');
+const mongoose = require("mongoose")
+
 module.exports = {
   findAll: function (req, res) {
     db.Character
-      .find({})
+      .find({_id: req.body.id})
       .sort({favorite: 1})
       .then(dbCharacter => res.json(dbCharacter))
       .catch(err => res.status(502).json(err))

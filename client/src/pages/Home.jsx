@@ -19,6 +19,9 @@ class Home extends Component {
               <Link to="/character/create">
                 <Buttons title="Yes, please!" colors={['red', 'darken-4']} />
               </Link>
+              <Link to="/campaign">
+                <Buttons title="New Campaign" colors={['red', 'darken-4']} />
+              </Link>
             </div>
           </div>
     );
