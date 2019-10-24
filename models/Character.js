@@ -17,7 +17,7 @@ let CharacterSchema = new Schema({
     },
     characterAppearance: {
         type: String,
-        required: true
+        required: false
     },
     experience: {
         type: Number,
@@ -26,12 +26,12 @@ let CharacterSchema = new Schema({
     },
     maxHealth: {
         type: Number,
-        required: true
+        required: true,
+        default: 10
     },
     currentHealth: {
         type: Number,
-        required: true,
-        default: Schema.maxHealth
+        required: false
     },
     stats: {
         strength: {
@@ -64,7 +64,7 @@ let CharacterSchema = new Schema({
     },
     spells: [{
         type: String,
-        required: true
+        required: false
     }],
     alignment: {
         type: String,

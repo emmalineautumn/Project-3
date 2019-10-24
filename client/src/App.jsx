@@ -20,12 +20,18 @@ let userValue
 dbAPI.getUser()
   .then(user => userValue = user)
   .catch(err => console.log(err));
-const UserSession = createContext(userValue)
+export const UserSession = createContext(userValue)
 
 
 class App extends Component {
   state = {
     toolbox: 'none',
+  }
+
+  static contextType = UserSession;
+
+  componentDidMount() {
+    console.log(UserSession)
   }
 
   render() {
