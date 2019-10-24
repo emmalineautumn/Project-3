@@ -35,6 +35,7 @@ export default {
     return axios.post("/api/campaign/character", campaignData)
   },
   createCharacterUser: characterData => {
+    console.log(characterData);
     return axios.post("/api/character/user", characterData)
   },
   getAllCharacters: () => {

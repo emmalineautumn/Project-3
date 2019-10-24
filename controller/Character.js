@@ -8,9 +8,27 @@ module.exports = {
       .catch(err => res.status(502).json(err))
   },
   create: function (req, res) {
-    console.log(req.body)
+    const data = req.body
     db.Character
-      .create(req.body)
+      .create({
+        name: data.name,
+        class: data.class,
+        race: data.race,
+        characterAppearance: data.characterAppearance,
+        maxHealth: data.maxHealth,
+        stats: {
+          strength: data.stats.strength,
+          dexterity: data.stats.dexterity,
+          constitution: data.stats.constitution,
+          intelligence: data.stats.intelligence,
+          wisdom: data.stats.wisdom,
+          initiative: data.stats.initiative,
+          charisma: data.stats.charisma
+        },
+        spells: [data.spells],
+        alignment: data.alignment,
+        NPC: data.npc  
+      })
       .then(results => res.json(results))
       .catch(err => res.status(502).json(err))
   },
@@ -23,21 +41,21 @@ module.exports = {
       characterAppearance: data.characterAppearance,
       maxHealth: data.maxHealth,
       stats: {
-        strength: data.strength,
-        dexterity: data.dexterity,
-        constitution: data.constitution,
-        intelligence: data.intelligence,
-        wisdom: data.wisdom,
-        initiative: data.initiative,
-        charisma: data.charisma
+        strength: data.stats.strength,
+        dexterity: data.stats.dexterity,
+        constitution: data.stats.constitution,
+        intelligence: data.stats.intelligence,
+        wisdom: data.stats.wisdom,
+        initiative: data.stats.initiative,
+        charisma: data.stats.charisma
       },
       spells: [data.spells],
       alignment: data.alignment,
-      NPC: data.NPC
+      NPC: data.npc
     })
     .then(function (dbCharacter) {
       db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true });
-      db.Campaign.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.campaignId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true });
+      // db.Campaign.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.campaignId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true });
     })
     .then(function (dbUser) {
       res.json(dbUser)
