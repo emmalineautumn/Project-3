@@ -1,10 +1,10 @@
 const db = require('../models');
-const passport = require("passport")
+
 
 module.exports = {
   findAll: function (req, res) {
     db.User
-      .find({ username: req.body.username })
+      .find({ _id: req.body.id })
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(502).json(err))
   },

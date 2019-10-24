@@ -3,7 +3,7 @@ import dbAPI from "../../utils/dbAPI"
 import Button from "../Buttons"
 import "./Sign-up.css";
 
-const SignUp = (props) => {
+const SignUp = () => {
     const [user, setUser] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPass, setConfirmPass] = useState("")

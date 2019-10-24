@@ -24,18 +24,18 @@ class Character extends Component {
             <div className="col l6">
                 <div className="Character grey">
                     <div className="Character-image">
-                        <img src={this.state.ClassImages[this.props.character.Class]} alt="" />
+                        <img src={this.state.ClassImages[this.props.character.class]} alt="" />
                     </div>
-                    <h1 className="Character-title">{this.props.character.Name || "Character Name"}</h1>
+                    <h1 className="Character-title">{this.props.character.name || "Character Name"}</h1>
                     <div style={{
                         fontFamily: 'Grenze'
                     }}>
-                        <div className="Character-data">Gender: {this.props.character.Gender}</div>
-                        <div className="Character-data">Race: {this.props.character.Race}</div>
-                        <div className="Character-data">Class: {this.props.character.Class}</div>
+                        <div className="Character-data">Gender: {this.props.character.gender}</div>
+                        <div className="Character-data">Race: {this.props.character.race}</div>
+                        <div className="Character-data">Class: {this.props.character.class}</div>
                         <div className="Character-data">Background: <p>{this.props.character.Background}</p></div>
                         {/* <div className="Character-data">Languages: {this.props.character.Languages}</div> */}
-                        <div className="Character-data">Equipment: {}</div>
+                        <div className="Character-data">Alignment: {this.props.character.alignment}</div>
                     </div>
                 </div>
             </div>
