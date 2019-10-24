@@ -29,6 +29,9 @@ class App extends Component {
 
   static contextType = UserSession;
 
+  componentDidMount() {
+    console.log(UserSession)
+  }
 
   render() {
     return (

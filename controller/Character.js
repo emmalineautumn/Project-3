@@ -56,11 +56,11 @@ module.exports = {
       NPC: data.npc
     })
     .then(function (dbCharacter) {
-      db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true });
+      db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true })
+      .then(function (dbUser) {
+        res.json(dbUser)
+      })
       // db.Campaign.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.campaignId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true });
-    })
-    .then(function (dbUser) {
-      res.json(dbUser)
     })
     .catch(function (err) {
       res.json(err)
