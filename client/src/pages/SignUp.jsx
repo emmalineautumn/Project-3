@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Modal from '../components/Modal'
 import SignIn from '../components/SignIn'
 import SignUp from '../components/Sign-up'
 

@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import dbAPI from "../../utils/dbAPI"
-import Button from "../Buttons"
 
-const SignUp = (props) => {
+const SignUp = () => {
     const [user, setUser] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPass, setConfirmPass] = useState("")
