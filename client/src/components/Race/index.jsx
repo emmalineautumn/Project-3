@@ -28,10 +28,10 @@ const ThisRace = () => {
                             alignment={thisRace.alignment}
                             speed={thisRace.speed}
                             age={thisRace.age}
-                            languages={thisRace.languages.map(data => <li key={data.url}>{data.name}</li>)}
+                            languages={thisRace.languages.map(data => <p>{data.name}</p>)}
                             languageDesc={thisRace.language_desc}
                             subrace={"Subraces : " + thisRace.subraces.map(data => data.name)}
-                            traits={thisRace.traits.map(data => <li key={data.url}>{data.name}</li>)}
+                            traits={thisRace.traits.map(data => <p>{data.name}</p>)}
                         />}
                     
                 </div>
