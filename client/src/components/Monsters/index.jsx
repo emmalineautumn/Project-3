@@ -42,7 +42,7 @@ class RefMonsters extends Component {
                         })}
                             </div>
 
-                        <div className="col m8 s12" style={{height: "80vh", overflow: "auto"}}>
+                        <div className="col m8 s12">
                     <Switch>
                         <Route path="/monsters/:id" component={ThisMonster} />
                     </Switch>
