@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import dbAPI from "../../utils/dbAPI"
+import dbAPI from "../../utils/dbAPI";
+import "../../index.css";
+import "./campaign.css";
 
 class CampaignBuilder extends Component {
     state = {
@@ -40,20 +42,38 @@ class CampaignBuilder extends Component {
     }
     render() {
         return (
-            <div className="container">
+          <div className="Campaign container">
+            <div className="row">
+              <form className="col s12">
                 <div className="row">
-                    <form className="col s12">
-                        <div className="row">
-                            <div className="input-field col s6">
-                                <input id="campaignName" name="campaignName" type="text" className="validate white-text" value={this.state.campaign} onChange={event => this.setState({ campaign: event.target.value })} />
-                                <label htmlFor="campaignName">campaignName</label>
-                            </div>
-                        </div>
-                        <input className="btn" type="submit" onClick={this.handleCampaignCreation} />
-                    </form>
+                  <div className="input-field col s12">
+                    <input
+                      id="campaignName"
+                      name="campaignName"
+                      type="text"
+                      className="validate white-text"
+                      value={this.state.campaign}
+                      onChange={event =>
+                        this.setState({ campaign: event.target.value })
+                      }
+                    />
+                    <label
+                      htmlFor="campaignName"
+                      className="black-text bold active"
+                    >
+                      Enter Your Campaign Name
+                    </label>
+                  </div>
                 </div>
+                <input
+                  className="btnCampaign btn"
+                  type="submit"
+                  onClick={this.handleCampaignCreation}
+                />
+              </form>
             </div>
-        )
+          </div>
+        );
     }
 }
 
