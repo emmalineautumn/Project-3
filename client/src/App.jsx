@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import Home from './pages/Home';
 import NotFound from './components/NotFound';
 import CreateCampaign from './pages/CampaignCreator';
-// import Toolbox from "./components/Toolbox";
+import Toolbox from "./components/Toolbox";
 import CharacterBuilder from "./pages/CharacterBuilder";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
@@ -21,7 +21,11 @@ import Spells from './pages/Spells'
 
 class App extends Component {
   state = {
-    toolbox: 'none',
+    toolbox: 'none'
+  }
+
+  changeTool = (value) => {
+    this.setState({toolbox: value});
   }
 
   render() {
@@ -49,8 +53,8 @@ class App extends Component {
               <Route path="/spells" component={Spells} />
               <Route path="/*" component={NotFound} />
             </Switch>
-            {/* <Toolbox toolbox={this.state.toolbox} /> */}
-            <Footer />
+            <Toolbox toolbox={this.state.toolbox} />
+            <Footer changeActiveTool={this.changeTool} toolbox={this.state.toolbox} />
 
           </AppStateProvider>
         </Router>
