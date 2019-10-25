@@ -11,14 +11,15 @@ import {
 
 class RefSpells extends Component {
     state = {
-        spells: []
+        spells: [],
+        spell: ""
     }
 
     componentDidMount() {
-        this.getRaces()
+        this.getSpells()
     }
 
-    getRaces = () => {
+    getSpells = () => {
         API.getAllSpells().then(spells => {
             this.setState({ spells: spells.data.results })
         })

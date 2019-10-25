@@ -19,7 +19,7 @@ const ThisSpell = () => {
                         {thisSpell && <SpellCard
                             key={thisSpell._id}
                             title={thisSpell.name}
-                            classes={thisSpell.classes.map(data => data.name)}
+                            classes={thisSpell.classes.map(data => data.name + " ")}
                             range={thisSpell.range}
                             school={thisSpell.school.name}
                             descriptions={thisSpell.desc.map(data => <p key={data}>{data}</p>)}
