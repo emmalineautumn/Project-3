@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from "./components/Nav";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -13,6 +13,8 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import CampaignBuilder from './components/Campaign Builder';
 import Classes from './pages/Classes';
+import Profile from './pages/Profile';
+import {AppStateProvider} from './AppContext';
 import Races from './pages/Races'
 import Monsters from './pages/Monsters'
 
@@ -23,8 +25,9 @@ class App extends Component {
 
   render() {
     return (
-        <div className="App">
-          <Router>
+      <div className="App">
+        <Router>
+          <AppStateProvider>
             <Header />
             <NavBar />
             <Switch>
@@ -38,15 +41,18 @@ class App extends Component {
               <Route path="/sign-up" exact component={SignUp} />
               <Route path="/sign-in" exact component={SignIn} />
               <Route exact path="/campaign" component={CampaignBuilder} />
-              <Route path ="/classes" component={Classes} />
+              <Route path="/classes" component={Classes} />
+              <Route path="/profile" component={Profile} />
               <Route path ="/races" component={Races} />
               <Route path="/monsters" component={Monsters} />
               <Route path="/*" component={NotFound} />
             </Switch>
             {/* <Toolbox toolbox={this.state.toolbox} /> */}
             <Footer />
-          </Router>
-        </div>
+
+          </AppStateProvider>
+        </Router>
+      </div>
     );
   }
 }
