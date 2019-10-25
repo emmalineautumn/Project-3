@@ -7,7 +7,7 @@ export default class SignUpPage extends Component {
     render() {
         return (
             <>
-                    <SignUp />
+                <SignUp />
             </>
         )
     }
