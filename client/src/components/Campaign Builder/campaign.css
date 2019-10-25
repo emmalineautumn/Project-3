@@ -1,3 +1,15 @@
+
+.btnCampaign {
+    color: white;
+    background-color: #B71C1C;
+}
+
+.btnCampaign:hover {
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: 0 0 7px black;
+    background-color: #B71C1C;
+}
+
 .Campaign {
     color: black;
     padding: 10px;
@@ -13,15 +25,4 @@
     flex-direction: row;
     justify-content: flex-start;
     color: black;
-}
-
-.btnCampaign {
-    color: white;
-    background-color: #B71C1C;
-}
-
-.btnCampaign:hover {
-    color: rgba(0, 0, 0, 0.87);
-    box-shadow: 0 0 7px black;
-    background-color: #B71C1C;
 }
