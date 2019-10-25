@@ -7,6 +7,9 @@ router.route('/')
 
 router.route('/user')
     .post(Campaign.createCampaign)
+
+router.route('/update')
+    .post(Campaign.update)
     
 router.route('/:id')
     .delete(Campaign.delete);
