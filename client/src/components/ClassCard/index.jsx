@@ -1,14 +1,15 @@
 import React from 'react'
+import "./classCard.css";
 
 // title, hitDie, subclasses, proficiencies, choose, proficiency, saving
-const ClasCard = (props) => {
+const ClassCard = (props) => {
     return (
         <>
-        <div className="container">
+            <div className="classCard container">
             <div className="card">
                 <div className="card-content">
                     <h1>{props.title}</h1>
-                    <p>Hit Die: {props.hitDie}</p>
+                    <p>Hit Die: d{props.hitDie}</p>
                     <p>Subclasses: {props.subclasses}</p>
                 </div>
                 <div className="card-content grey lighten-4">
@@ -17,7 +18,8 @@ const ClasCard = (props) => {
                     </div>
                     <div id="proficiency">
                         choose: {props.choose}
-                        <p>{props.proficiency}</p>
+                        <p>From: </p>
+                        <ol>{props.proficiency}</ol>
                     </div>
                     <div id="saving">
                         Saving Throws: {props.saving}
@@ -29,4 +31,4 @@ const ClasCard = (props) => {
     );
 }
 
-export default ClasCard
+export default ClassCard

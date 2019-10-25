@@ -3,7 +3,7 @@ import "./NotFound.css";
 
 
 function NotFound() {
-    return <div className="container grey lighten-5">
+    return <div className="container notFound">
         <h1>Error 404</h1>
         <h2>You did a whoopsie</h2>
         <h3>Go back to where you were before</h3>

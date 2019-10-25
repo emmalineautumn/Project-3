@@ -19,7 +19,11 @@ class NavBar extends Component {
                     <li><NavLink to="/mycampaigns">My Campaigns</NavLink></li>
                     <li><NavLink to="/mytables">My Tables</NavLink></li>
                     <Dropdown label="References">
-                        <Dropdown label="Spells" destination="/spells" size="small">
+                        <li><NavLink to="/spells">Spells</NavLink></li>
+                        <li><NavLink to="/classes">Classes</NavLink></li>
+                        <li><NavLink to="/races">Races</NavLink></li>
+                        <li><NavLink to="/monsters">Monsters</NavLink></li>
+                        {/* <Dropdown label="Spells" destination="/spells" size="small">
                             <li><NavLink to="/spells/bybook">By Book</NavLink></li>
                             <li><NavLink to="/spells/byclass">By Class</NavLink></li>
                             <li><NavLink to="/spells/byschool">By School</NavLink></li>
@@ -36,7 +40,7 @@ class NavBar extends Component {
                         <Dropdown label="Monsters" destination="/monsters" size="small">
                             <li><NavLink to="/monsters/bybook">By Book</NavLink></li>
                             <li><NavLink to="/homebrew/monsters">Homebrew Monsters</NavLink></li>
-                        </Dropdown>
+                        </Dropdown> */}
                     </Dropdown>
                 </ul >
                 <div className="center brand-logo">

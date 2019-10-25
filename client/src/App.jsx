@@ -16,47 +16,18 @@ import CampaignBuilder from './components/Campaign Builder';
 import Classes from './pages/Classes';
 import Profile from './pages/Profile';
 import {AppStateProvider} from './AppContext';
-
-// call this context by putting "static contextType = UserSession" on the page and then pass into {this.context}
-// let userValue
-// dbAPI.getUser()
-//   .then(user => userValue = user)
-//   .catch(err => console.log(err));
-// export const UserSession = createContext(userValue)
-
-
-// // export const withContext = Component => {
-// //   return props => {
-// //     return (
-// //       <UserSession.Consumer>
-// //         {globalState => {
-// //           return <Component {...globalState} {...props} />;
-// //         }}
-// //       </UserSession.Consumer>
-// //     )
-// //   }
-// // }
-
+import Races from './pages/Races'
 
 class App extends Component {
   state = {
     toolbox: 'none',
-    // userValue
-  }
-
-  // static contextType = UserSession;
-
-  componentDidMount() {
-    // console.log(UserSession)
   }
 
   render() {
     return (
-      // <UserSession.Provider value={this.state.userValue}>
       <div className="App">
         <Router>
           <AppStateProvider>
-
             <Header />
             <NavBar />
             <Switch>
@@ -71,9 +42,8 @@ class App extends Component {
               <Route path="/sign-in" exact component={SignIn} />
               <Route exact path="/campaign" component={CampaignBuilder} />
               <Route path="/classes" component={Classes} />
-              {/* <UserSession.Consumer> */}
               <Route path="/profile" component={Profile} />
-              {/* </UserSession.Consumer> */}
+              <Route path ="/races" component={Races} />
               <Route path="/*" component={NotFound} />
             </Switch>
             {/* <Toolbox toolbox={this.state.toolbox} /> */}
@@ -82,7 +52,6 @@ class App extends Component {
           </AppStateProvider>
         </Router>
       </div>
-      // </UserSession.Provider>
     );
   }
 }

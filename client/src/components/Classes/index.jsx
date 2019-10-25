@@ -31,6 +31,7 @@ class RefClasses extends Component {
             <>
                 <Router>
                     <div className="container">
+                        <div className="row"></div>
                     {this.state.classes.map(classes => {
                         return (
                         <Link to={"/classes/" + classes.url.split('/').pop()} key={classes.url.split('/').pop()}>

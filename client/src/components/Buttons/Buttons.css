@@ -2,6 +2,12 @@ button {
     margin: .3em;
 }
 
+#yesButton {
+    color: white;
+    background-color: #B71C1C;
+    margin: .5em;
+}
+
 #yesButton:hover {
     color: rgba(0, 0, 0, 0.87);
     box-shadow: 0 0 7px black;
