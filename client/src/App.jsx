@@ -14,6 +14,7 @@ import dbAPI from './utils/dbAPI';
 import SignIn from "./pages/SignIn";
 import CampaignBuilder from './components/Campaign Builder';
 import Classes from './pages/Classes';
+import Races from './pages/Races'
 
 
 // call this context by putting "static contextType = UserSession" on the page and then pass into {this.context}
@@ -54,6 +55,7 @@ class App extends Component {
               <Route path="/sign-in" exact component={SignIn} />
               <Route exact path="/campaign" component={CampaignBuilder} />
               <Route path ="/classes" component={Classes} />
+              <Route path ="/races" component={Races} />
               <Route path="/*" component={NotFound} />
             </Switch>
             {/* <Toolbox toolbox={this.state.toolbox} /> */}

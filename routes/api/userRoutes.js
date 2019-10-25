@@ -18,7 +18,10 @@ router.route('/login')
     );
 
 router.route('/character')
-        .post(User.populateCharacter)    
+        .post(User.populateCharacter)  
+        
+router.route('/campaign')
+        .post(User.populateCampaign)
 
 router.route('/:id')
     .delete(User.delete);
