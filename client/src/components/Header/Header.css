@@ -21,6 +21,19 @@
 }
 
 #userDisplay:hover {
-  box-shadow: 0 0 7px white;
+    box-shadow: 0 0 7px white;
 }
 
+.username {
+    color: white;
+    border-radius: 3px;
+
+}
+
+.username:hover {
+    box-shadow: 0 0 7px white;
+    background-color: #B71C1C;
+    color: black;
+    border-radius: 3px;
+    padding: 0.2em;
+}
