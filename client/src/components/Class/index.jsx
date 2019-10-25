@@ -4,34 +4,38 @@ import ClassCard from '../ClassCard'
 import { useParams } from 'react-router-dom'
 
 const ThisClass = () => {
+    let { id } = useParams();
     const [thisClass, setThisClass] = useState([])
-    const [params, setParams] = useState("1")
+    const [params, setParams] = useState(id)
 
-    let id = useParams();
 
     const getThisClass = () => {
-        setParams(id.id)
-        console.log(params)
+        setParams(id)
         API.getClasses(params).then(classData => setThisClass([...thisClass, classData.data]))
-
     }
 
-    useEffect(() => getThisClass(), [])
+    useEffect(getThisClass, [id])
 
     return (
         <>
-            {thisClass.map(classData => 
-                <ClassCard
-                    key={classData.url}
-                    title={classData.name}
-                    hitDie={classData.hit_die}
-                    subclasses={classData.subclasses.map(data => data.name)}
-                    proficiencies={classData.proficiencies.map(data => data.name + ", ")}
-                    choose={classData.proficiency_choices.map(data => data.choose)}
-                    proficiency={classData.proficiency_choices.map(data => data.from.map(res => res.name + " "))}
-                    saving={classData.saving_throws.map(data => data.name + " ")}
-                />
-            )}
+            <div className="container">
+                <div className="row">
+                    {thisClass.map(classData => {
+                        console.log(classData);
+                        return <ClassCard
+                            key={classData._id}
+                            title={classData.name}
+                            hitDie={classData.hit_die}
+                            subclasses={classData.subclasses.map(data => data.name)}
+                            proficiencies={classData.proficiencies.map(data => data.name + ", ")}
+                            choose={classData.proficiency_choices.map(data => data.choose + ", ")}
+                            proficiency={classData.proficiency_choices.map(data => {return <li>{data.from.map(res => res.name + ", ")}</li>})}
+                            saving={classData.saving_throws.map(data => data.name + " ")}
+                        />
+                    }
+                    )}
+                </div>
+            </div>
         </>
     )
 }
