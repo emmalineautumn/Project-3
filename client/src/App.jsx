@@ -1,4 +1,4 @@
-import React, { Component, createContext } from "react";
+import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from "./components/Nav";
@@ -10,13 +10,14 @@ import CreateCampaign from './pages/CampaignCreator';
 import Toolbox from "./components/Toolbox";
 import CharacterBuilder from "./pages/CharacterBuilder";
 import SignUp from "./pages/SignUp";
-import dbAPI from './utils/dbAPI';
 import SignIn from "./pages/SignIn";
 import CampaignBuilder from './components/Campaign Builder';
 import Classes from './pages/Classes';
 import Profile from './pages/Profile';
 import {AppStateProvider} from './AppContext';
 import Races from './pages/Races'
+import Monsters from './pages/Monsters'
+import Spells from './pages/Spells'
 
 class App extends Component {
   state = {
@@ -48,6 +49,8 @@ class App extends Component {
               <Route path="/classes" component={Classes} />
               <Route path="/profile" component={Profile} />
               <Route path ="/races" component={Races} />
+              <Route path="/monsters" component={Monsters} />
+              <Route path="/spells" component={Spells} />
               <Route path="/*" component={NotFound} />
             </Switch>
             <Toolbox toolbox={this.state.toolbox} />

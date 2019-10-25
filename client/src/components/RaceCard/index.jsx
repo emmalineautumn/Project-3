@@ -9,7 +9,7 @@ const RaceCard = (props) => {
             <div className="card">
                 <div className="card-content">
                     <h1>{props.title}</h1>
-                    <h6>{props.size}</h6>
+                    <h6>Average Size: {props.size}</h6>
                     <p>Size Description: {props.sizeDesc}</p>
                     <p>Speed: {props.speed}</p>
                     <h6>Age Description:</h6>
@@ -18,15 +18,16 @@ const RaceCard = (props) => {
                 </div>
                 <div className="card-content grey lighten-4">
                     <div>
-                       <ol>{props.traits}</ol>
+                        <h5>Traits: </h5>
+                       {props.traits}
                     </div>
                     <div>
-                        <h4>Languages: </h4>
+                        <h5>Languages:</h5>
                         <p>{props.languageDesc}</p>
                         {props.languages}
                     </div>
                     <div>
-                        <ol>{props.subraces}</ol>
+                        {props.subraces}
                     </div>
                 </div>
             </div>
