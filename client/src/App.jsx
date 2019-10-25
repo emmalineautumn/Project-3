@@ -1,6 +1,6 @@
 import React, { Component, createContext } from "react";
 import "./App.css";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from "./components/Nav";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -14,33 +14,20 @@ import dbAPI from './utils/dbAPI';
 import SignIn from "./pages/SignIn";
 import CampaignBuilder from './components/Campaign Builder';
 import Classes from './pages/Classes';
+import Profile from './pages/Profile';
+import {AppStateProvider} from './AppContext';
 import Races from './pages/Races'
-
-
-// call this context by putting "static contextType = UserSession" on the page and then pass into {this.context}
-let userValue
-dbAPI.getUser()
-  .then(user => userValue = user)
-  .catch(err => console.log(err));
-export const UserSession = createContext(userValue)
-
 
 class App extends Component {
   state = {
     toolbox: 'none',
   }
 
-  static contextType = UserSession;
-
-  componentDidMount() {
-    console.log(UserSession)
-  }
-
   render() {
     return (
-      <UserSession.Provider value={this.state.userValue}>
-        <div className="App">
-          <Router>
+      <div className="App">
+        <Router>
+          <AppStateProvider>
             <Header />
             <NavBar />
             <Switch>
@@ -54,15 +41,17 @@ class App extends Component {
               <Route path="/sign-up" exact component={SignUp} />
               <Route path="/sign-in" exact component={SignIn} />
               <Route exact path="/campaign" component={CampaignBuilder} />
-              <Route path ="/classes" component={Classes} />
+              <Route path="/classes" component={Classes} />
+              <Route path="/profile" component={Profile} />
               <Route path ="/races" component={Races} />
               <Route path="/*" component={NotFound} />
             </Switch>
             {/* <Toolbox toolbox={this.state.toolbox} /> */}
             <Footer />
-          </Router>
-        </div>
-      </UserSession.Provider>
+
+          </AppStateProvider>
+        </Router>
+      </div>
     );
   }
 }
