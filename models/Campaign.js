@@ -20,6 +20,10 @@ let CampaignSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Character"
   }],
+  users: [{
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  }],
   monsters: [{
     type: String
   }],

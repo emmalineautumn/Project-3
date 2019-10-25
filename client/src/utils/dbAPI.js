@@ -13,6 +13,9 @@ export default {
   createCampaign: campaignData => {
     return axios.post("/api/campaign", campaignData);
   },
+  updateCampaign: campaignData => {
+    return axios.post("/api/campaign/update", campaignData);
+  },
   getAllUsers: userData => {
     return axios.get("/api/user", userData);
   },
@@ -30,6 +33,9 @@ export default {
   },
   populateCharacter: characterData => {
     return axios.post("/api/user/character", characterData)
+  },
+  populateCampaign: campaignData => {
+    return axios.post("/api/user/campaign", campaignData)
   },
   createCampaignUser: campaignData => {
     return axios.post("/api/campaign/user", campaignData)

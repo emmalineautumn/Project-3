@@ -35,7 +35,7 @@ module.exports = {
   },
   update: (req, res) => {
     db.Campaign
-      .updateOne(req.params.id)
+      .findOneAndUpdate({_id: req.body.id}, { $push: { 'users': [req.body.userId]}}, { "new": true, "upsert": true })
       .then(updated => res.json(updated))
       .catch(err => res.status(502).json(err))
   },
