@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import dbAPI from "../../utils/dbAPI"
-import Button from "../Buttons"
 import "./Sign-up.css";
 
 const SignUp = () => {
