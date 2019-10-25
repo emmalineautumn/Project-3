@@ -1,10 +1,11 @@
 import React from 'react'
+import "./classCard.css";
 
 // title, hitDie, subclasses, proficiencies, choose, proficiency, saving
 const ClassCard = (props) => {
     return (
         <>
-        <div className="col s12 m6 offset-m3">
+            <div className="classCard container">
             <div className="card">
                 <div className="card-content">
                     <h1>{props.title}</h1>
