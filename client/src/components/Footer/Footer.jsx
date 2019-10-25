@@ -13,7 +13,8 @@ class Footer extends Component {
                 >
                     <li className="grey lighten-5">Whiteboard</li>
                     <li className="grey lighten-5">Tables</li>
-                    <li className="grey lighten-5">Dice Roller</li>
+                    <li className="grey lighten-5" onClick={() => this.props.changeActiveTool('dice')}>Dice Roller</li>
+                    {this.props.toolbox !== 'none' && <li className="grey lighten-5" onClick={() => this.props.changeActiveTool('none')}>Close Toolbox</li>}
                 </ul>
             </div>
         )

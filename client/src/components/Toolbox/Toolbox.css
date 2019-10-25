@@ -1,0 +1,37 @@
+body {
+    background-color: darkgrey;
+    background-image: none;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#unityContainer {
+    width: 100%;
+    height: 100%;
+}
+
+#diceTray {
+    position: fixed;
+    bottom: 0;
+    right: 4rem;
+}
+
+#diceTray button {
+    font-size: 2em;
+    padding: 1em;
+}
+
+#hideDice {
+    position: fixed;
+    bottom: 0;
+    right: 4rem;
+    z-index: 1000;
+}
