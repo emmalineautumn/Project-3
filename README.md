@@ -6,6 +6,7 @@
 Dragonslayer is a built-from-scratch React App, bringing your D&D dreams to **digital**. 
 
 ![Image of Wizard](https://piskel-imgstore-b.appspot.com/img/44e83b7a-f797-11e9-9d69-7b541452a7e8.gif)
+<img src="https://piskel-imgstore-b.appspot.com/img/44e83b7a-f797-11e9-9d69-7b541452a7e8.gif" alt="Image of Wizard" style="width: 200px">
 
 ### Overview of Application
 This application is a create-react-app, broken into individual components, and routed to 
