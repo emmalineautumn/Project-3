@@ -2,6 +2,8 @@ import React, { useState, useContext, useLayoutEffect } from 'react'
 import dbAPI from '../../utils/dbAPI'
 import { AppStateContext } from '../../AppContext';
 import CampaignCard from './CampaignCard'
+import {Link} from 'react-router-dom'
+import Buttons from '../Buttons'
 
 const MyCampaigns = () => {
     const context = useContext(AppStateContext);
@@ -23,11 +25,17 @@ const MyCampaigns = () => {
     return (
         <>
             <div className="container">
-            <div className="row">
-            <div className="col m8 offset-m2 s12" style={{fontFamily: 'Grenze'}}>
-                <h1 style={{color: "#fff"}}>My Campaigns</h1>
-             </div>
-             </div>
+                <div className="row">
+                    <div className="col m8 offset-m2 s12" style={{ fontFamily: 'Grenze' }}>
+                        <h1 style={{ color: "#fff" }}>My Campaigns</h1>
+                        <Link to="/campaign">
+                            <Buttons
+                                title="Start a New Campaign"
+                                colors={["red", "darken-4"]}
+                            />
+                        </Link>
+                    </div>
+                </div>
                 <div className="row">
                     {campaigns && campaigns.map(data => {
                         return <div className="col s12 m6" style={{ height: "60vh", overflow: "auto" }} key={data._id}>
@@ -35,7 +43,7 @@ const MyCampaigns = () => {
                                 key={data._id}
                                 title={data.name}
                                 campaignId={data._id}
-                                />
+                            />
                         </div>
                     })}
                 </div>

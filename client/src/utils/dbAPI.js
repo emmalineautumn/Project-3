@@ -13,6 +13,9 @@ export default {
   createCampaign: campaignData => {
     return axios.post("/api/campaign", campaignData);
   },
+  viewCampaign: id => {
+    return axios.get("/viewcampaign/" + id)
+  },
   updateCampaign: campaignData => {
     return axios.post("/api/campaign/update", campaignData);
   },
