@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import '../Builder';
+import React, { useState } from 'react'
 import './Character.css';
 
-class Character extends Component {
-    state = {
+const Character = (props) => {
+    const [sprites, setSprites] = useState({
         ClassImages: {
             Wizard: 'https://piskel-imgstore-b.appspot.com/img/44e83b7a-f797-11e9-9d69-7b541452a7e8.gif',
             Warlock: 'https://piskel-imgstore-b.appspot.com/img/62f09600-f797-11e9-9db7-7b541452a7e8.gif',
@@ -17,30 +16,33 @@ class Character extends Component {
             Cleric: 'https://piskel-imgstore-b.appspot.com/img/308a4085-f798-11e9-b12a-7b541452a7e8.gif',
             Fighter: 'https://piskel-imgstore-b.appspot.com/img/443d2375-f798-11e9-806c-7b541452a7e8.gif',
             Bard: 'https://piskel-imgstore-b.appspot.com/img/5f73c0e6-f798-11e9-8bcb-7b541452a7e8.gif',
-        }      
-    }
-    render() {
+        }  
+    })
+    // class, name, gender, race, class, background, alignment, strength, dexterity, intelligence, charisma, constitution, wisdom
         return (
-            <div className="col l6" style={{height: "80vh", overflow: "auto"}}>
                 <div className="Character grey">
+                        <h1 className="Character-title">{props.name || "Character Name"}</h1>
+                        <div className="Character-data" style={{fontFamily: 'Grenze'}}>Race: {props.race}</div>
+                        <div className="Character-data" style={{fontFamily: 'Grenze'}}>Class: {props.class}</div>
+                        <div className="Character-data" style={{fontFamily: 'Grenze'}}>Alignment: {props.alignment}</div>
+
                     <div className="Character-image">
-                        <img src={this.state.ClassImages[this.props.character.class]} alt="" />
+                        <img src={sprites.ClassImages[props.class]} alt="" />
                     </div>
-                    <h1 className="Character-title">{this.props.character.name || "Character Name"}</h1>
                     <div style={{
                         fontFamily: 'Grenze'
                     }}>
-                        <div className="Character-data">Gender: {this.props.character.gender}</div>
-                        <div className="Character-data">Race: {this.props.character.race}</div>
-                        <div className="Character-data">Class: {this.props.character.class}</div>
-                        <div className="Character-data">Background: <p>{this.props.character.Background}</p></div>
-                        {/* <div className="Character-data">Languages: {this.props.character.Languages}</div> */}
-                        <div className="Character-data">Alignment: {this.props.character.alignment}</div>
+                        <div className="Character-data">Stats:
+                            <p>Strength: {props.strength}</p>
+                            <p>Dexterity: {props.dexterity}</p>
+                            <p>Intelligence: {props.intelligence}</p>
+                            <p>Charisma: {props.charisma}</p>
+                            <p>Consitution: {props.constitution}</p>
+                            <p>Wisdom: {props.wisdom}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
         );
-    }
 }
 
 export default Character;

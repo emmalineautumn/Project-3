@@ -5,7 +5,7 @@ import "./classCard.css";
 const ClassCard = (props) => {
     return (
         <>
-            <div className="classCard container">
+            <div className="classCard container" style={{fontFamily: 'Grenze'}}>
             <div className="card">
                 <div className="card-content">
                     <h1>{props.title}</h1>
