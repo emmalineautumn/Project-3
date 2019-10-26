@@ -8,21 +8,21 @@ const ClassCard = (props) => {
             <div className="classCard container" style={{fontFamily: 'Grenze'}}>
             <div className="card">
                 <div className="card-content">
-                    <h1>{props.title}</h1>
-                    <p>Hit Die: d{props.hitDie}</p>
-                    <p>Subclasses: {props.subclasses}</p>
+                    <h1 className="descriptionClass">{props.title}</h1>
+                    <p><span className="subHeadingClass">Hit Die: </span>{props.hitDie}</p>
+                    <p><span className="subHeadingClass">Subclasses: </span>{props.subclasses}</p>
                 </div>
                 <div className="card-content grey lighten-4">
                     <div id="proficiencies">
-                        Proficiencies: {props.proficiencies}
+                        <span className="subHeadingClass">Proficiencies: </span>{props.proficiencies}
                     </div>
                     <div id="proficiency">
-                        choose: {props.choose}
-                        <p>From: </p>
+                        <span className="subHeadingClass">Choose: </span>{props.choose}
+                        <p><span className="subHeadingClass">From: </span></p>
                         <ol>{props.proficiency}</ol>
                     </div>
                     <div id="saving">
-                        Saving Throws: {props.saving}
+                        <span className="subHeadingClass">Saving Throws: </span>{props.saving}
                     </div>
                 </div>
             </div>

@@ -68,16 +68,17 @@ const SignUp = (props) => {
                       value={password}
                       onChange={event => setPassword(event.target.value)}
                     />
-                    <label 
-                        htmlFor="password" 
-                        className="black-text bold active"
-                    > 
-                        Password
+                    <label
+                      htmlFor="password"
+                      className="black-text bold active"
+                    >
+                      Password
                     </label>
                   </div>
                 </div>
                 <input
                   className="btn btnSignIn"
+                  style={{ fontFamily: "Grenze" }}
                   type="submit"
                   onClick={handleLogin}
                 />

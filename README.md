@@ -1,29 +1,42 @@
-# Create React Express App
+# [DRAGONSLAYER](http://dragonslayerapp.com/)
 
-## About This Boilerplate
+# Welcome To Dragonslayer!
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+### What and Why
+        Dragonslayer is a built-from-scratch React App, bringing your D&D dreams to **digital**. 
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+        ![Image of Wizard]
+        (https://piskel-imgstore-b.appspot.com/img/44e83b7a-f797-11e9-9d69-7b541452a7e8.gif)
 
-## Starting the app locally
+### Overview of Application
+        This application is a create-react-app, broken into individual components, and routed to 
+        their respective pages. 
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+### How to Use
+        To enter the Dragonslayer world, simply click [here.](http://dragonslayerapp.com/) 
 
-```
-npm install
-```
+        As a new user, create your profile by Registering your information. Once you are an existing user, 
+        all you'll need to do is Sign In. 
 
-This should install node modules within the server and the client folder.
+        Once logged in, you'll need to start creating characters. Click the option on the homepage to complete 
+        the character builder. You can view all characters you have created by visiting My Characters. 
 
-After both installations complete, run the following command in your terminal:
+        To start a campaign, click the option on the homepage. As with characters, you can view your campaigns 
+        using the My Campaigns link in the Navigation Bar. 
 
-```
-npm start
-```
+### Technologies Used
+* React
+* Context
+* Moment 
+* Axios 
+* Passport 
+* Mongoose 
+* bcrypt 
+* Nodemailer 
+* Express
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+### The Team
 
-## Deployment (Heroku)
+        This application was built by a team of four developers: [Stephen Oveson,](https://github.com/StephenOveson) [Mason Short,](https://github.com/LtWilhelm) [Joey Bright](https://github.com/janthonybright) and [Cate Ashley.](https://github.com/cashley617) 
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+        They met during a coding bootcamp, and it was love at first deploy. 

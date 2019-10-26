@@ -73,6 +73,7 @@ class CampaignBuilder extends Component {
               </div>
               <input
                 className="btnCampaign btn"
+                style={{ fontFamily: "Grenze" }}
                 type="submit"
                 onClick={this.handleCampaignCreation}
               />
