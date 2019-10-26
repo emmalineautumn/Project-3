@@ -1,29 +1,89 @@
-# Create React Express App
+# [DRAGONSLAYER] (http://dragonslayerapp.com/)
 
-## About This Boilerplate
+# Welcome To Dragonslayer!
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+### What and Why
+        Dragonslayer is a built-from-scratch React App, bringing your D&D dreams to digital. 
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
-## Starting the app locally
+### Overview of application
+        This application uses NodeJS and npm's node modules to run multiple different processes based 
+        on what is asked of LIRI.
+        It uses a node-spotify-api package found at (https://www.npmjs.com/package/node-spotify-api) to 
+        intake songs commands and spit out information about the song.
+        It uses an api called [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api to 
+        intake a band and put out information about upcoming concerts.
+        It also uses moment.js along side the bands in town api to configure the dates correctly and legibly.
+        I am also using OMDB's API [OMDB API](http://www.omdbapi.com)
+        Both the bands in town API and omdb API is being run using the axios package
+        It then uses 'fs' to append to a log file any commands fed to it
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+### How to Use
+        Instructions to run the application:
+        You will need your own spotify developer account with both the "secret id" and "client id".
+        Then you can create a ".env" file with:
+        ```
+        # Spotify API keys
+        SPOTIFY_ID="your-spotify-id"
+        SPOTIFY_SECRET="your-spotify-secret"
+        ```
 
-```
-npm install
-```
+        Place this ".env" file into the same directory as the liri.js.
+        You will need to install the modules by running "npm install".
+        You will now have everything you need to run the application.
 
-This should install node modules within the server and the client folder.
+        Open up command line and using "node" run the file and add commands such as
+        spotify-this-song "song name"
+        movie-this "movie title"
+        concert-this "band name"
 
-After both installations complete, run the following command in your terminal:
+        spotify-this-song "song name" returns data relative to the song inserted including; Artist, Album, 
+        and Song Name.
+        concert-this "band name" returns concert venues, contries, cities, and dates that it's all occuring
+        movie-this "movie name" returns Movie title, ratings, year it came out, plot, and actors
+        do-what-it-says will run a command based on what's in the "random.txt file" you can change the file, 
+        but the general layout needs to stay the same for example:
 
-```
-npm start
-```
+        ```
+        movie-this,"tron"
+        concert-this,"honne"
+        spotify-this-song,"all you need is love"
+        ```
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
-## Deployment (Heroku)
+### Screenshots
+* spotify-this-song LIRI command
+![spotify-this-song screenshot](./assets/screenshots/spotify-this-song.png)
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+        spotify, spotify-this and spotify-this-song commands all work for the above screenshot command
+
+* movie-this command before
+![movie-this](./assets/screenshots/beforecommand.png)
+
+        movie, movies, movie-this commands all work for the above screenshot command
+
+
+* movie-this after command
+![movie-this](./assets/screenshots/command.png)
+
+        movie, movies, movie-this commands all work for the above screenshot command
+
+* concert-this command
+![concert-this](./assets/screenshots/concert-this.png)
+
+        concert, concerts, and concert-this commands all work for the above screenshot command
+
+* do-what-it-says command
+![do-what-it-says](./assets/screenshots/do-what-it-says.png)
+        This follows the file included of random.txt
+
+
+### Technologies Used
+* NodeJS
+* JS
+* NPM
+
+### My role
+
+        I am the developer of this project and have built it from 
+        scratch using the mentioned technologies above.
