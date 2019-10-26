@@ -13,6 +13,9 @@ export default {
   createCampaign: campaignData => {
     return axios.post("/api/campaign", campaignData);
   },
+  viewCampaign: id => {
+    return axios.get("/viewcampaign/" + id)
+  },
   updateCampaign: campaignData => {
     return axios.post("/api/campaign/update", campaignData);
   },
@@ -63,5 +66,8 @@ export default {
   },
   createCharacter: characterData => {
     return axios.post("/api/character", characterData);
+  },
+  userLogout: () => {
+    return axios.get("/api/user/logout")
   }
 };

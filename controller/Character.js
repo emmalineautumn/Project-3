@@ -81,7 +81,9 @@ module.exports = {
   delete: function (req, res) {
     db.Character
       .findByIdAndDelete(req.params.id)
-      .then(results => res.json(results))
+      .then(results => {
+        res.json(results)
+      })
       .catch(err => res.status(502).json(err))
   }
 };

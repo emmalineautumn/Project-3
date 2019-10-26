@@ -5,12 +5,15 @@ import "./campaign.css";
 import { AppStateContext } from '../../AppContext';
 import Buttons from '../Buttons';
 import Session from '../SessionVerification';
+import { Redirect } from 'react-router-dom'
+
 
 class CampaignBuilder extends Component {
   state = {
     campaign: "",
     userId: "",
-    campaignId: ''
+    campaignId: '',
+    redirect: ""
   }
 
   static contextType = AppStateContext;
@@ -34,12 +37,13 @@ class CampaignBuilder extends Component {
       userId: id.join('')
     });
     this.setState({ campaign: "" })
-  }
+    }
 
   handleCampaignCreation = event => {
     event.preventDefault()
     this.findUser()
   }
+
   render() {
     return (
       <Session>

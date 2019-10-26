@@ -45,7 +45,7 @@ class NavBar extends Component {
                 </ul >
                 <div className="center brand-logo">
                     <NavLink to="/" className='valign-wrapper'>
-                        <img src="/img/dragon_logo.png" alt="logo" style={{
+                        <img src="/img/dragon_logo.png" alt="logo" className="hide-on-med-and-down" style={{
                             height: '2em'
                         }} />
                     </NavLink>

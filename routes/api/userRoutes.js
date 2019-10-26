@@ -21,6 +21,9 @@ router.route('/character/:id')
 router.route('/campaign/:id')
         .get(User.populateCampaign)
 
+router.route('/logout')
+        .get(User.logout)
+
 router.route('/:id')
     .get(User.findAll)
     .delete(User.delete);

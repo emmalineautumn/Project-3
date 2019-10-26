@@ -14,6 +14,16 @@ module.exports = {
       .then(results => res.json(results))
       .catch(err => res.status(502).json(err))
   },
+  viewCampaign: (req, res) => {
+    db.Campaign.findOne({ _id: req.params.id })
+    .populate("characters")
+    .then(function (foundOne) {
+      res.json(foundOne)
+    })
+    .catch(function (err) {
+      res.json(err)
+    })
+  },
   createCampaign: (req, res) => {
     let data = req.body
     console.log(data)
@@ -75,7 +85,9 @@ module.exports = {
   delete: function (req, res) {
     db.Campaign
       .findByIdAndDelete(req.params.id)
-      .then(results => res.json(results))
+      .then(results => {
+        res.json(results)
+      })
       .catch(err => res.status(502).json(err))
   }
 };
