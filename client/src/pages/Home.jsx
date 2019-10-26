@@ -35,13 +35,13 @@ class Home extends Component {
                 </ul>
                 <Link to="/character/create">
                   <Buttons
-                    title="Make Your Character!"
+                    title="Make New Characters!"
                     colors={["red", "darken-4"]}
                   />
                 </Link>
                 <Link to="/campaign">
                   <Buttons
-                    title="Start a New Campaign"
+                    title="Create a New Campaign"
                     colors={["red", "darken-4"]}
                   />
                 </Link>
