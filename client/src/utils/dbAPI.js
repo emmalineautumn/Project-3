@@ -13,6 +13,9 @@ export default {
   createCampaign: campaignData => {
     return axios.post("/api/campaign", campaignData);
   },
+  updateCampaign: campaignData => {
+    return axios.post("/api/campaign/update", campaignData);
+  },
   getAllUsers: userData => {
     return axios.get("/api/user", userData);
   },
@@ -29,7 +32,16 @@ export default {
     return axios.post("/api/user", userData);
   },
   populateCharacter: characterData => {
-    return axios.post("/api/user/character", characterData)
+    return axios.get("/api/user/character", characterData)
+  },
+  populateCampaign: id => {
+    return axios.get("/api/user/campaign/" + id)
+  },
+  addNote: data => {
+    return axios.post("/api/campaign/note", data)
+  },
+  getNotes: id => {
+    return axios.get("/api/campaign/getnotes/" + id)
   },
   createCampaignUser: campaignData => {
     return axios.post("/api/campaign/user", campaignData)

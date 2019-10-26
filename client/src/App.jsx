@@ -19,6 +19,7 @@ import Races from './pages/Races'
 import Monsters from './pages/Monsters'
 import Spells from './pages/Spells'
 import CampaignJoin from "./pages/CampaignJoin";
+import MyCampaigns from './pages/MyCampaigns'
 
 class App extends Component {
   state = {
@@ -48,6 +49,7 @@ class App extends Component {
               <Route path="/sign-in" exact render={props => <SignIn {...props} redirectTo="/" />} />
               <Route exact path="/campaign" component={CampaignBuilder} />
               <Route path="/classes" component={Classes} />
+              <Route path="/MyCampaigns" component={MyCampaigns} />
               <Route path="/profile" component={Profile} />
               <Route path ="/races" component={Races} />
               <Route path="/monsters" component={Monsters} />

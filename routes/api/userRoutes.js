@@ -16,11 +16,11 @@ router.route('/login')
         }
     );
 
-router.route('/character')
-        .post(User.populateCharacter)  
+router.route('/character/:id')
+        .get(User.populateCharacter)  
         
-router.route('/campaign')
-        .post(User.populateCampaign)
+router.route('/campaign/:id')
+        .get(User.populateCampaign)
 
 router.route('/:id')
     .get(User.findAll)
