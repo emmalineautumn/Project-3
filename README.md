@@ -1,4 +1,4 @@
-# [DRAGONSLAYER] (http://dragonslayerapp.com/)
+# [DRAGONSLAYER](http://dragonslayerapp.com/)
 
 # Welcome To Dragonslayer!
 
@@ -13,7 +13,7 @@
         their respective pages. 
 
 ### How to Use
-        To enter the Dragonslayer world, simply click [here.] (http://dragonslayerapp.com/) 
+        To enter the Dragonslayer world, simply click [here.](http://dragonslayerapp.com/) 
 
         As a new user, create your profile by Registering your information. Once you are an existing user, 
         all you'll need to do is Sign In. 
@@ -24,40 +24,13 @@
         To start a campaign, click the option on the homepage. As with characters, you can view your campaigns 
         using the My Campaigns link in the Navigation Bar. 
 
-
-### Screenshots
-* spotify-this-song LIRI command
-![spotify-this-song screenshot](./assets/screenshots/spotify-this-song.png)
-
-        spotify, spotify-this and spotify-this-song commands all work for the above screenshot command
-
-* movie-this command before
-![movie-this](./assets/screenshots/beforecommand.png)
-
-        movie, movies, movie-this commands all work for the above screenshot command
-
-
-* movie-this after command
-![movie-this](./assets/screenshots/command.png)
-
-        movie, movies, movie-this commands all work for the above screenshot command
-
-* concert-this command
-![concert-this](./assets/screenshots/concert-this.png)
-
-        concert, concerts, and concert-this commands all work for the above screenshot command
-
-* do-what-it-says command
-![do-what-it-says](./assets/screenshots/do-what-it-says.png)
-        This follows the file included of random.txt
-
-
 ### Technologies Used
 * NodeJS
 * JS
 * NPM
 
-### My role
+### The Team
 
-        I am the developer of this project and have built it from 
-        scratch using the mentioned technologies above.
+        This application was built by a team of four developers: [Stephen Oveson,](https://github.com/StephenOveson) [Mason Short,](https://github.com/LtWilhelm) [Joey Bright](https://github.com/janthonybright) and [Cate Ashley.](https://github.com/cashley617) 
+
+        They met during a coding bootcamp, and it was love at first deploy. 
