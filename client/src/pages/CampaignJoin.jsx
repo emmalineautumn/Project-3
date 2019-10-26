@@ -11,11 +11,11 @@ class CampaignJoin extends Component {
 
     componentDidMount(){
         const {id} = this.props.match.params
-        console.log(id)
         dbAPI.getCampaign(id)
             .then(res => {
-                this.setState({campaign: res.data[0]});
-                dbAPI.getUser(res.data[0].DM)
+                console.log(res)
+                this.setState({campaign: res.data});
+                dbAPI.getUser(res.data.DM)
                     .then(res => {
                         this.setState({DM: res.data[0].username});
                     });
@@ -25,14 +25,14 @@ class CampaignJoin extends Component {
     render () {
         return (
             <Session>
-                <div className="container grey lighten-2">
+                {this.state.campaign && (<div className="container grey lighten-2">
                     <h1>{this.state.campaign.name}</h1>
-                    <h3>{this.state.DM}</h3>
-                    <p>
+                    <h3>Dungeon Master: {this.state.DM}</h3>
+                    <h4>
                         Click below to join this campaign and create a character
-                    </p>
-                    <Buttons title="Join Campaign" />
-                </div>
+                    </h4>
+                    <a href={`/character/create/${this.props.match.params.id}`}><Buttons title="Join Campaign" /></a>
+                </div>)}
             </Session>
         )
     }

@@ -2,10 +2,11 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 async function invite(recipient, campaign, inviter) {
+    console.log(recipient, campaign, inviter);
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
             user: process.env.SOURCE_EMAIL,
             pass: process.env.SOURCE_EMAIL_PW
@@ -23,7 +24,7 @@ async function invite(recipient, campaign, inviter) {
     //     }
     // })
 
-    let info = await transporter.sendMail({
+    transporter.sendMail({
         from: `"Dragonslayer Invites 🐲" <${process.env.SOURCE_EMAIL}>`,
         to: recipient,
         subject: 'Join my Dragonslayer campaign!',
@@ -62,11 +63,19 @@ async function invite(recipient, campaign, inviter) {
         <body>
             <h1>An adventure awaits!</h1>
             <p>${inviter} has invited you to join their party on Dragonslayer. Follow this link and sign in to join their campaign!</p>
-            <a href="https://thedragonslayer.herokuapp.com/campaign/join/${campaign}">Join Campaign</a>
-            <img src="https://thedragonslayer.herokuapp.com/img/dragon_logo.png" alt="dragonslayer">
+            <a href="https://dragonslayerapp.com/campaign/join/${campaign}">Join Campaign</a>
+            <img src="https://imgur.com/a/1lGtTPy" alt="dragonslayer">
         </body>
         </html>`
-    });
+    },
+    (err, info)=>{
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(info.response)
+        }
+    }
+    );
 }
 
 module.exports = invite;

@@ -32,12 +32,9 @@ module.exports = {
       DM: data.userId
     })
     .then(function (dbCampaign) {
-      console.log(dbCampaign)
-      return db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'campaigns': [dbCampaign._id] } }, { "new": true, "upsert": true });
-    })
-    .then(function (dbUser) {
-      res.json(dbUser)
-      console.log(dbUser)
+      // console.log(dbCampaign)
+      db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'campaigns': [dbCampaign._id] } }, { "new": true, "upsert": true })
+      .then(res.json(dbCampaign));
     })
     .catch(function (err) {
       res.json(err)
@@ -66,7 +63,7 @@ module.exports = {
     })
   },
   populateCharacter: (req, res) => {
-    db.Campaign.findOne({ _id: req.body.id })
+    db.Campaign.findOne({ _id: req.params.id })
     .populate("characters")
     .then(function (foundOne) {
       res.json(foundOne)

@@ -58,9 +58,15 @@ module.exports = {
       .then(function (dbCharacter) {
         db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true })
           .then(function (dbUser) {
-            res.json(dbUser)
+            if (data.campaignId) {
+              db.Campaign.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.campaignId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true })
+                .then(
+                  res.json(dbUser)
+                );
+            } else {
+              res.json(dbUser)
+            }
           })
-        // db.Campaign.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.campaignId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true });
       })
       .catch(function (err) {
         res.json(err)

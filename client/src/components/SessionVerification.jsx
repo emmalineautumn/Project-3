@@ -20,13 +20,13 @@ export default function Session(props) {
                 {signInOption === 'signup' && (
                     <>
                         <SignUpPage />
-                        <span>Already have an account?</span>
+                        <span style={{color: 'white'}}>Already have an account?</span>
                     </>
                     )}
                 {signInOption === 'signin' && (
                     <>
                         <SignInPage />
-                        <span>Don't have an account?</span>
+                        <span style={{color: 'white'}}>Don't have an account?</span>
                     </>
                 )}
                 <Buttons clickThis={() => setSignInOption(signInOptions[signInOption])} title={signInOption === 'signup' ? 'Sign In' : 'Create Account'} />

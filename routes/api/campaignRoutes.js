@@ -19,6 +19,6 @@ router.route('/getnotes/:id')
     
 router.route('/:id')
     .delete(Campaign.delete)
-    .get(Campaign.findAll);
+    .get(Campaign.populateCharacter);
 
 module.exports = router;

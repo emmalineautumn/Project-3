@@ -46,6 +46,9 @@ export default {
   getNotes: id => {
     return axios.get("/api/campaign/getnotes/" + id)
   },
+  populateCampaignCharacters: id => {
+    return axios.get('/api/campaign/' + id)
+  },
   createCampaignUser: campaignData => {
     return axios.post("/api/campaign/user", campaignData)
   },
