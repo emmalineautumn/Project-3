@@ -18,6 +18,7 @@ import {AppStateProvider} from './AppContext';
 import Races from './pages/Races'
 import Monsters from './pages/Monsters'
 import Spells from './pages/Spells'
+import CampaignJoin from "./pages/CampaignJoin";
 
 class App extends Component {
   state = {
@@ -51,6 +52,7 @@ class App extends Component {
               <Route path ="/races" component={Races} />
               <Route path="/monsters" component={Monsters} />
               <Route path="/spells" component={Spells} />
+              <Route path="/campaign/join/:id" component={CampaignJoin} />
               <Route path="/*" component={NotFound} />
             </Switch>
             <Toolbox toolbox={this.state.toolbox} />

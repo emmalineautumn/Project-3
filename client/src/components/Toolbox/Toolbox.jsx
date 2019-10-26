@@ -7,6 +7,7 @@ class Toolbox extends Component {
             this.props.toolbox === 'dice' && (
             <div id="gameRegion">
                 <iframe 
+                    title="dice roller"
                     src="https://ltwilhelm.github.io/dragonslayer-dice/"
                     class="webgl-content"
                     style={{

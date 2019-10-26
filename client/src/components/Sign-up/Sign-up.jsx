@@ -1,16 +1,38 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import dbAPI from "../../utils/dbAPI"
+import axios from 'axios';
 import "./Sign-up.css";
+import { AppStateContext } from '../../AppContext';
 
-const SignUp = () => {
+const SignUp = (props) => {
     const [user, setUser] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPass, setConfirmPass] = useState("")
     const [email, setEmail] = useState("")
+    const [redirectTo, setRedirectTo] = useState("")
+
+    const context = useContext(AppStateContext)
 
     const createUser = (user) => {
         dbAPI.createUser(user)
-            .then(saved => console.log(saved))
+            .then(saved => {
+              console.log(saved);
+              axios
+              .post("/api/user/login", {
+                  username: user,
+                  password: password
+              })
+              .then(response => {
+                context.updateUser();
+                if(props.redirectTo) {
+                  setRedirectTo(props.redirectTo)
+                }
+              }).catch(error => {
+                  console.log("login error: SignIn Component")
+                  console.log(error)
+              })
+  
+            })
             .catch(err => console.log(err))
     }
 

@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Redirect } from 'react-router-dom'
 import axios from 'axios';
 import './SignIn.css';
+import { AppStateContext } from '../../AppContext';
 
 const SignUp = (props) => {
     const [user, setUser] = useState("")
     const [password, setPassword] = useState("")
+    // eslint-disable-next-line
     const [redirectTo, setRedirectTo] = useState("")
+
+    const context = useContext(AppStateContext)
 
     const handleLogin = event => {
         event.preventDefault();
@@ -16,9 +20,10 @@ const SignUp = (props) => {
                 password: password
             })
             .then(response => {
-                console.log("login response: ")
-                console.log(response)
-                setRedirectTo("/")
+              context.updateUser();
+              if(props.redirectTo) {
+                setRedirectTo(props.redirectTo)
+              }
             }).catch(error => {
                 console.log("login error: SignIn Component")
                 console.log(error)
