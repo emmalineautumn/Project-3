@@ -14,8 +14,8 @@ const SignUp = (props) => {
 
   const context = useContext(AppStateContext)
 
-  const createUser = (user) => {
-    dbAPI.createUser(user)
+  const createUser = (userData) => {
+    dbAPI.createUser(userData)
       .then(saved => {
         console.log(saved);
         axios
@@ -25,6 +25,10 @@ const SignUp = (props) => {
           })
           .then(response => {
             context.updateUser();
+            setUser("")
+            setPassword("")
+            setConfirmPass("")
+            setEmail("")
             if (props.location.pathname === '/sign-up') {
               setRedirectTo('/')
             }
@@ -32,7 +36,6 @@ const SignUp = (props) => {
             console.log("login error: SignIn Component")
             console.log(error)
           })
-
       })
       .catch(err => console.log(err))
   }
@@ -46,10 +49,6 @@ const SignUp = (props) => {
       date: Date.now()
     }
     createUser(userData)
-    setUser("")
-    setPassword("")
-    setConfirmPass("")
-    setEmail("")
   }
 
   if (redirectTo) {
