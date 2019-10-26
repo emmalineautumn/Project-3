@@ -37,7 +37,7 @@ const RaceCard = (props) => {
                     </Link>
                 </div>
                 <div className="card-content grey lighten-4">
-                    <button className="btn" id={props.campaignId} onClick={seeNotes} style={{ fontFamily: 'Grenze' }}>Get Notes</button>
+                    <button className="btn" id={props.campaignId} onClick={seeNotes} style={{ fontFamily: 'Grenze' }}>See Campaign Notes</button>
                     {notes && notes.map(data =>
                         <div key={data._id}>
                             <p key={data.date}>{moment(data.date).format("MMM Do YY")}</p>
@@ -50,7 +50,7 @@ const RaceCard = (props) => {
                             onClick={event => {
                                 event.preventDefault(); setShow(false)
                             }}>
-                            Add Note
+                            Add Campaign Note
                                 </button>
                         <textarea
                             name="campaignNotes"
