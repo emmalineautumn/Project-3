@@ -4,8 +4,8 @@ const mongoose = require("mongoose")
 module.exports = {
   findAll: function (req, res) {
     db.Character
-      .find({_id: req.body.id})
-      .sort({favorite: 1})
+      .find({ _id: req.body.id })
+      .sort({ favorite: 1 })
       .then(dbCharacter => res.json(dbCharacter))
       .catch(err => res.status(502).json(err))
   },
@@ -29,7 +29,7 @@ module.exports = {
         },
         spells: [data.spells],
         alignment: data.alignment,
-        NPC: data.npc  
+        NPC: data.npc
       })
       .then(results => res.json(results))
       .catch(err => res.status(502).json(err))
@@ -55,16 +55,16 @@ module.exports = {
       alignment: data.alignment,
       NPC: data.npc
     })
-    .then(function (dbCharacter) {
-      db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true })
-      .then(function (dbUser) {
-        res.json(dbUser)
+      .then(function (dbCharacter) {
+        db.User.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.userId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true })
+          .then(function (dbUser) {
+            res.json(dbUser)
+          })
+        // db.Campaign.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.campaignId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true });
       })
-      // db.Campaign.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.campaignId) }, { $push: { 'characters': [dbCharacter._id] } }, { "new": true, "upsert": true });
-    })
-    .catch(function (err) {
-      res.json(err)
-    })
+      .catch(function (err) {
+        res.json(err)
+      })
   },
   update: (req, res) => {
     db.Character
@@ -75,7 +75,9 @@ module.exports = {
   delete: function (req, res) {
     db.Character
       .findByIdAndDelete(req.params.id)
-      .then(results => res.json(results))
+      .then(results => {
+        res.json(results)
+      })
       .catch(err => res.status(502).json(err))
   }
 };
