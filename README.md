@@ -25,9 +25,15 @@
         using the My Campaigns link in the Navigation Bar. 
 
 ### Technologies Used
-* NodeJS
-* JS
-* NPM
+* React
+* Context
+* Moment 
+* Axios 
+* Passport 
+* Mongoose 
+* bcrypt 
+* Nodemailer 
+* Express
 
 ### The Team
 
