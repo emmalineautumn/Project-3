@@ -26,7 +26,11 @@
         As a new user, create your profile by Registering your information. Once you are an existing user, 
         all you'll need to do is Sign In. 
 
-        Once
+        Once logged in, you'll need to start creating characters. Click the option on the homepage to complete 
+        the character builder. You can view all characters you have created by visiting My Characters. 
+
+        To start a campaign, click the option on the homepage. As with characters, you can view your campaigns 
+        using the My Campaigns link in the Navigation Bar. 
 
 
 ### Screenshots
