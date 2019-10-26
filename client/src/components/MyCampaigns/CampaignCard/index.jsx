@@ -30,11 +30,36 @@ const RaceCard = (props) => {
                     </div>
                     <div className="card-content grey lighten-4">
                         <button className="btn" id={props.campaignId} onClick={seeNotes}>Get Notes</button>
-                        {notes && notes.map(data => <div><p>{moment(data.date).format("MMM Do YY")}</p><p>Note: {data.note}</p></div>)}
+                        {notes && notes.map(data =>
+                            <div>
+                                <p>{moment(data.date).format("MMM Do YY")}</p>
+                                <p>Note: {data.note}</p>
+                            </div>
+                        )}
                         <form>
-                            <submit className="btn" style={!show ? { display: "none" } : { display: "block" }} onClick={event => { event.preventDefault(); setShow(false) }}>Add Note</submit>
-                            <textarea name="campaignNotes" style={show ? { display: "none" } : { display: "block" }} value={campaignNotes} onChange={event => setCampaignNotes(event.target.value)} />
-                            <submit className="btn" id={props.campaignId} style={show ? { display: "none" } : { display: "block" }} onClick={event => { event.preventDefault(); newNote(event.target.id); setShow(true) }}>New Note</submit>
+                            <submit
+                                className="btn"
+                                style={!show ? { display: "none" } : { display: "block" }}
+                                onClick={event => {
+                                    event.preventDefault(); setShow(false)
+                                }}>
+                                Add Note
+                                </submit>
+                            <textarea
+                                name="campaignNotes"
+                                style={show ? { display: "none" } : { display: "block" }}
+                                value={campaignNotes}
+                                onChange={event => setCampaignNotes(event.target.value)}
+                            />
+                            <submit
+                                className="btn"
+                                id={props.campaignId}
+                                style={show ? { display: "none" } : { display: "block" }}
+                                onClick={event => {
+                                    event.preventDefault(); newNote(event.target.id); setShow(true)
+                                }}>
+                                New Note
+                                </submit>
                         </form>
                     </div>
                 </div>
