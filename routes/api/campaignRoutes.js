@@ -10,6 +10,12 @@ router.route('/user')
 
 router.route('/update')
     .post(Campaign.update)
+
+router.route('/note')
+    .post(Campaign.addNote)
+
+router.route('/getnotes/:id')
+    .get(Campaign.populateNotes)
     
 router.route('/:id')
     .delete(Campaign.delete);

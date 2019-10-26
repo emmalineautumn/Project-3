@@ -39,9 +39,35 @@ module.exports = {
       .then(updated => res.json(updated))
       .catch(err => res.status(502).json(err))
   },
+  addNote: (req, res) => {
+    let data = req.body
+    db.Note.create({
+      author: data.name,
+      note: data.note
+    })
+    .then(function (dbNote) {
+      db.Campaign.findOneAndUpdate({ _id: mongoose.Types.ObjectId(data.id) }, { $push: { 'notes': [dbNote._id] } }, { "new": true, "upsert": true })
+    .then(function (dbCampaign) {
+      res.json(dbCampaign)
+    })
+  })
+    .catch(function (err) {
+      res.json(err)
+    })
+  },
   populateCharacter: (req, res) => {
     db.Campaign.findOne({ _id: req.body.id })
     .populate("characters")
+    .then(function (foundOne) {
+      res.json(foundOne)
+    })
+    .catch(function (err) {
+      res.json(err)
+    })
+  },
+  populateNotes: (req, res) => {
+    db.Campaign.findOne({ _id: req.params.id })
+    .populate("notes")
     .then(function (foundOne) {
       res.json(foundOne)
     })

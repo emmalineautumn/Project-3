@@ -28,7 +28,7 @@ let UserSchema = new Schema({
   }],
   campaigns: [{
     type: Schema.Types.ObjectId,
-    ref: "User"
+    ref: "Campaign"
   }]
 });
 

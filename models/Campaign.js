@@ -27,10 +27,11 @@ let CampaignSchema = new Schema({
   monsters: [{
     type: String
   }],
-  Notes: [{
-    type: String
+  notes: [{
+    type: String,
+    ref: "Notes"
   }],
-  Maps: [{
+  maps: [{
     type: String,
   }],
   NPCs: [{
