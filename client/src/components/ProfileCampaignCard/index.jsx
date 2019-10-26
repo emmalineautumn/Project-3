@@ -37,7 +37,11 @@ const ProfileCard = (props) => {
                         <h5>Created: {moment(props.created).format('MMMM Do YYYY, h:mm:ss a')}</h5>
                     </div>
                     <div className="card-content grey lighten-4">
-                        <Button id={context.user === props.dm ? props.campaignId : props.characterId} clickThis={context.user === props.dm ? delCampaign : delCharacter} title={props.dm ? "Leave Campaign?" : "Delete Character?"} />
+                        <Button 
+                        id={context.user === props.dm ? props.campaignId : props.characterId} 
+                        clickThis={context.user === props.dm ? delCampaign : delCharacter} 
+                        title={props.dm ? "Leave Campaign?" : "Delete Character?"} 
+                        />
                     </div>
                 </div>
             </div>
