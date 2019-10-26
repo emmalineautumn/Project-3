@@ -3,8 +3,10 @@
 # Welcome To Dragonslayer!
 
 ### What and Why
-        Dragonslayer is a built-from-scratch React App, bringing your D&D dreams to digital. 
+        Dragonslayer is a built-from-scratch React App, bringing your D&D dreams to **digital**. 
 
+        ![Image of Wizard]
+        (https://piskel-imgstore-b.appspot.com/img/44e83b7a-f797-11e9-9d69-7b541452a7e8.gif)
 
 ### Overview of application
         This application uses NodeJS and npm's node modules to run multiple different processes based 
@@ -19,36 +21,12 @@
         It then uses 'fs' to append to a log file any commands fed to it
 
 ### How to Use
-        Instructions to run the application:
-        You will need your own spotify developer account with both the "secret id" and "client id".
-        Then you can create a ".env" file with:
-        ```
-        # Spotify API keys
-        SPOTIFY_ID="your-spotify-id"
-        SPOTIFY_SECRET="your-spotify-secret"
-        ```
+        To enter the Dragonslayer world, simply click [here.] (http://dragonslayerapp.com/) 
 
-        Place this ".env" file into the same directory as the liri.js.
-        You will need to install the modules by running "npm install".
-        You will now have everything you need to run the application.
+        As a new user, create your profile by Registering your information. Once you are an existing user, 
+        all you'll need to do is Sign In. 
 
-        Open up command line and using "node" run the file and add commands such as
-        spotify-this-song "song name"
-        movie-this "movie title"
-        concert-this "band name"
-
-        spotify-this-song "song name" returns data relative to the song inserted including; Artist, Album, 
-        and Song Name.
-        concert-this "band name" returns concert venues, contries, cities, and dates that it's all occuring
-        movie-this "movie name" returns Movie title, ratings, year it came out, plot, and actors
-        do-what-it-says will run a command based on what's in the "random.txt file" you can change the file, 
-        but the general layout needs to stay the same for example:
-
-        ```
-        movie-this,"tron"
-        concert-this,"honne"
-        spotify-this-song,"all you need is love"
-        ```
+        Once
 
 
 ### Screenshots
