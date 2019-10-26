@@ -18,6 +18,7 @@ import {AppStateProvider} from './AppContext';
 import Races from './pages/Races'
 import Monsters from './pages/Monsters'
 import Spells from './pages/Spells'
+import MyCampaigns from './pages/MyCampaigns'
 
 class App extends Component {
   state = {
@@ -47,6 +48,7 @@ class App extends Component {
               <Route path="/sign-in" exact component={SignIn} />
               <Route exact path="/campaign" component={CampaignBuilder} />
               <Route path="/classes" component={Classes} />
+              <Route path="/MyCampaigns" component={MyCampaigns} />
               <Route path="/profile" component={Profile} />
               <Route path ="/races" component={Races} />
               <Route path="/monsters" component={Monsters} />

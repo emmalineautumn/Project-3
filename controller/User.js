@@ -76,7 +76,7 @@ module.exports = {
     })
   },
   populateCampaign: (req, res) => {
-    db.User.findOne({ _id: req.body.id })
+    db.User.findOne({ _id: req.params.id })
     .populate("campaigns")
     .then(function (foundOne) {
       res.json(foundOne)
@@ -86,13 +86,13 @@ module.exports = {
     })
   },
   update: (req, res) => {
-    User
+    db.User
       .updateOne(req.params.id)
       .then(updated => res.json(updated))
       .catch(err => res.status(502).json(err))
   },
   delete: function (req, res) {
-    User
+    db.User
       .findByIdAndDelete(req.params.id)
       .then(results => res.json(results))
       .catch(err => res.status(502).json(err))
