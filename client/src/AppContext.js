@@ -15,7 +15,12 @@ export class AppStateProvider extends Component {
 
     updateUser = () => {
         dbAPI.userSession()
-            .then(user => this.setState({ user: user.data }))
+            .then(userId => {
+                dbAPI.getUser(userId.data)
+                    .then(user => {
+                        this.setState({ user: user.data[0]._id, username: user.data[0].username })
+                    });
+            })
             .catch(err => {
                 console.log('No user currently signed in on this session, setting to null');
                 this.setState({ user: null })
@@ -28,6 +33,7 @@ export class AppStateProvider extends Component {
 
     state = {
         user: '',
+        username: '',
         setGlobalState: this.setGlobalState,
         updateUser: this.updateUser
     }

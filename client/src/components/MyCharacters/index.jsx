@@ -8,13 +8,14 @@ const MyCharacters = () => {
     const [character, setCharacter] = useState("")
 
     const findMyCharacters = () => {
-        let id = []
-        for (let i = 0; i < context.state.user.length; i++) {
-            id.push(context.state.user[i])
+        if(context.user) {
+            let id = []
+            for (let i = 0; i < context.user.length; i++) {
+                id.push(context.user[i])
+            }
+            let userId = id.join('')
+            dbAPI.populateCharacter(userId).then(data => setCharacter(data.data.characters))
         }
-        let userId = id.join('')
-        dbAPI.populateCharacter(userId).then(data => setCharacter(data.data.characters))
-
     }
 
     useLayoutEffect(findMyCharacters, [context])
@@ -38,7 +39,6 @@ const MyCharacters = () => {
                                 name={data.name}
                                 gender={data.gender}
                                 race={data.race}
-                                class={data.class}
                                 background={data.background}
                                 alignment={data.alignment}
                                 strength={data.stats.strength}

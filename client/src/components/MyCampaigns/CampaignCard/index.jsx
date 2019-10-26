@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from 'react'
 import "./CampaignCard.css";
 import dbAPI from '../../../utils/dbAPI'
 import { AppStateContext } from '../../../AppContext';
-import Session from '../../SessionVerification';
 let moment = require('moment')
 
 const RaceCard = (props) => {
@@ -23,7 +22,6 @@ const RaceCard = (props) => {
     }
 
     return (
-        <Session>
             <div className="campaignCard container" style={{fontFamily: 'Grenze'}}>
                 <div className="card">
                     <div className="card-content">
@@ -65,7 +63,6 @@ const RaceCard = (props) => {
                     </div>
                 </div>
             </div>
-        </Session>
     );
 }
 

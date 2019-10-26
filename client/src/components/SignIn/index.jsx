@@ -12,8 +12,6 @@ const SignUp = (props) => {
 
     const context = useContext(AppStateContext)
 
-    console.log(props)
-
     const handleLogin = event => {
         event.preventDefault();
         axios

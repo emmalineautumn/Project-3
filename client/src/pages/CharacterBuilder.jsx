@@ -25,7 +25,8 @@ class CharacterBuilder extends Component {
             alignment: "",
             npc: false,
         },
-        userId: ''
+        userId: '',
+        
     }
 
     static contextType = UserSession;
@@ -74,7 +75,8 @@ class CharacterBuilder extends Component {
             character.userId = this.state.userId;
             
             dbAPI.createCharacterUser(character).then(res => {
-                console.log(res);
+                const campID = res.data._id;
+
             });
         });
     }
