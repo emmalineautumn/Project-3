@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 import axios from 'axios';
 import './SignIn.css';
 import { AppStateContext } from '../../AppContext';
@@ -12,6 +12,8 @@ const SignUp = (props) => {
 
     const context = useContext(AppStateContext)
 
+    console.log(props)
+
     const handleLogin = event => {
         event.preventDefault();
         axios
@@ -21,8 +23,8 @@ const SignUp = (props) => {
             })
             .then(response => {
               context.updateUser();
-              if(props.redirectTo) {
-                setRedirectTo(props.redirectTo)
+              if(props.location.pathname === '/sign-in') {
+                setRedirectTo('/')
               }
             }).catch(error => {
                 console.log("login error: SignIn Component")
@@ -88,4 +90,4 @@ const SignUp = (props) => {
     }
 }
 
-export default SignUp
+export default withRouter(SignUp);

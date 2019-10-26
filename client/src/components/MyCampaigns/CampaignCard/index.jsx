@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import "./CampaignCard.css";
 import dbAPI from '../../../utils/dbAPI'
 import { AppStateContext } from '../../../AppContext';
+import Session from '../../SessionVerification';
 let moment = require('moment')
 
 const RaceCard = (props) => {
@@ -11,7 +12,7 @@ const RaceCard = (props) => {
     const [show, setShow] = useState(true)
 
     const newNote = id => {
-        dbAPI.addNote({ name: context.state.user, note: campaignNotes, id: id }).then(data => console.log(data))
+        dbAPI.addNote({ name: context.user, note: campaignNotes, id: id }).then(data => console.log(data))
     }
 
     const seeNotes = event => {
@@ -22,7 +23,7 @@ const RaceCard = (props) => {
     }
 
     return (
-        <>
+        <Session>
             <div className="campaignCard container">
                 <div className="card">
                     <div className="card-content">
@@ -64,7 +65,7 @@ const RaceCard = (props) => {
                     </div>
                 </div>
             </div>
-        </>
+        </Session>
     );
 }
 

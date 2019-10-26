@@ -45,8 +45,8 @@ class App extends Component {
                 component={CreateCampaign}
               />
               <Route path="/character/create" component={CharacterBuilder} />
-              <Route path="/sign-up" exact render={props => <SignUp {...props} redirectTo="/" />} />
-              <Route path="/sign-in" exact render={props => <SignIn {...props} redirectTo="/" />} />
+              <Route path="/sign-up" exact component={SignUp} />
+              <Route path="/sign-in" exact component={SignIn} />
               <Route exact path="/campaign" component={CampaignBuilder} />
               <Route path="/classes" component={Classes} />
               <Route path="/MyCampaigns" component={MyCampaigns} />
