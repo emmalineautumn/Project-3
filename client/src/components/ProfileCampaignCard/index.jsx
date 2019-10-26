@@ -13,6 +13,7 @@ const ProfileCard = (props) => {
     const delCampaign = event => {
         event.preventDefault()
         dbAPI.deleteCampaign(event.target.id).then(result => {
+            console.log(result)
             alert("Campaign Deleted")
             setRedirectTo('/profile')
         })
@@ -21,6 +22,7 @@ const ProfileCard = (props) => {
     const delCharacter = event => {
         event.preventDefault()
         dbAPI.deleteCharacter(event.target.id).then(result => {
+            console.log(result)
             alert("Character Deleted")
             setRedirectTo('/profile')
         })
@@ -30,7 +32,7 @@ const ProfileCard = (props) => {
         return <Redirect to={{ pathname: redirectTo }} />
     } else {
         return (
-            <div className="campaignCard container" style={{ fontFamily: 'Grenze' }}>
+            <div className="campaignCard" style={{ fontFamily: 'Grenze' }}>
                 <div className="card">
                     <div className="card-content">
                         <h3>{props.title}</h3>
