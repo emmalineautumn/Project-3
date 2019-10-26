@@ -40,7 +40,7 @@ const ProfileCard = (props) => {
                         <Button 
                         id={context.user === props.dm ? props.campaignId : props.characterId} 
                         clickThis={context.user === props.dm ? delCampaign : delCharacter} 
-                        title={props.dm ? "Leave Campaign?" : "Delete Character?"} 
+                        title={props.dm ? "Delete Campaign?" : "Delete Character?"} 
                         />
                     </div>
                 </div>
