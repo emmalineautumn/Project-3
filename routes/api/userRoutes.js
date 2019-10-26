@@ -3,7 +3,6 @@ const User = require('../../controller/User');
 const passport = require('passport')
 
 router.route('/')
-    .get(User.findAll)
     .post(User.create);
 
 router.route('/me')
@@ -24,6 +23,7 @@ router.route('/campaign/:id')
         .get(User.populateCampaign)
 
 router.route('/:id')
+    .get(User.findAll)
     .delete(User.delete);
 
 module.exports = router;

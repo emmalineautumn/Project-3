@@ -8,12 +8,14 @@ const MyCampaigns = () => {
     const [campaigns, setCampaigns] = useState("")
 
     const findMyCampaigns = () => {
-        let id = []
-        for (let i = 0; i < context.state.user.length; i++) {
-            id.push(context.state.user[i])
+        if (context.user) {
+            let id = []
+            for (let i = 0; i < context.user.length; i++) {
+                id.push(context.user[i])
+            }
+            let userId = id.join('')
+            dbAPI.populateCampaign(userId).then(data => setCampaigns(data.data.campaigns))
         }
-        let userId = id.join('')
-        dbAPI.populateCampaign(userId).then(data => setCampaigns(data.data.campaigns))
     }
 
     useLayoutEffect(findMyCampaigns, [context])

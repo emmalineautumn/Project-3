@@ -2,7 +2,7 @@ const router = require('express').Router();
 const Campaign = require('../../controller/Campaign');
 
 router.route('/')
-    .get(Campaign.findAll)
+    // .get(Campaign.findAll)
     .post(Campaign.create);
 
 router.route('/user')
@@ -18,6 +18,7 @@ router.route('/getnotes/:id')
     .get(Campaign.populateNotes)
     
 router.route('/:id')
-    .delete(Campaign.delete);
+    .delete(Campaign.delete)
+    .get(Campaign.findAll);
 
 module.exports = router;

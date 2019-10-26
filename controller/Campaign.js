@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 module.exports = {
   findAll: function (req, res) {
     db.Campaign
-      .find({ _id: req.body.id})
+      .find({ _id: req.params.id})
       .then(dbCampaign => res.json(dbCampaign))
       .catch(err => res.status(502).json(err))
   },

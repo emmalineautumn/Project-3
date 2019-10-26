@@ -5,7 +5,7 @@ export default {
     return axios.get("/api/campaign");
   },
   getCampaign: id => {
-    return axios.get("/api/campaign/", id);
+    return axios.get("/api/campaign/" + id);
   },
   deleteCampaign: id => {
     return axios.delete("/api/campaign/" + id);
@@ -20,7 +20,7 @@ export default {
     return axios.get("/api/user", userData);
   },
   getUser: id => {
-    return axios.get("/api/user/", id);
+    return axios.get("/api/user/" + id);
   },
   deleteUser: id => {
     return axios.delete("/api/user/" + id);
@@ -47,7 +47,6 @@ export default {
     return axios.post("/api/campaign/user", campaignData)
   },
   createCharacterUser: characterData => {
-    console.log(characterData);
     return axios.post("/api/character/user", characterData)
   },
   getAllCharacters: () => {

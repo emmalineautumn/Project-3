@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import "./CampaignCard.css";
 import dbAPI from '../../../utils/dbAPI'
 import { AppStateContext } from '../../../AppContext';
@@ -11,7 +11,7 @@ const RaceCard = (props) => {
     const [show, setShow] = useState(true)
 
     const newNote = id => {
-        dbAPI.addNote({ name: context.state.user, note: campaignNotes, id: id }).then(data => console.log(data))
+        dbAPI.addNote({ name: context.user, note: campaignNotes, id: id }).then(data => console.log(data))
     }
 
     const seeNotes = event => {
@@ -22,7 +22,6 @@ const RaceCard = (props) => {
     }
 
     return (
-        <>
             <div className="campaignCard container" style={{fontFamily: 'Grenze'}}>
                 <div className="card">
                     <div className="card-content">
@@ -64,7 +63,6 @@ const RaceCard = (props) => {
                     </div>
                 </div>
             </div>
-        </>
     );
 }
 
