@@ -23,7 +23,7 @@ const MyCampaigns = () => {
             <div className="container">
             <div className="row">
             <div className="col m8 offset-m2 s12" style={{fontFamily: 'Grenze'}}>
-                <h1 style={{color: "#fff"}}>My Characters</h1>
+                <h1 style={{color: "#fff"}}>My Campaigns</h1>
              </div>
              </div>
                 <div className="row">
