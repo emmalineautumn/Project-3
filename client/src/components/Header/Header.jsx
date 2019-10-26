@@ -21,7 +21,7 @@ class Header extends Component {
                             </>
                             )}
                             {this.context.user && 
-                                <a href="/sign-up" className="valign-wrapper right">
+                                <a href="/profile" className="valign-wrapper right">
                                     <span className="username" style={{ margin: '1em' }}>{this.context.username}</span>
                                 </a>
                             }

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Builder from '../components/Builder';
 import Character from '../components/Character';
 import dbAPI from '../utils/dbAPI';
-import UserSession from '../App'
-
+import { AppStateContext } from '../AppContext';
+import Session from '../components/SessionVerification';
+import {Redirect} from 'react-router-dom';
 
 class CharacterBuilder extends Component {
     state = {
@@ -25,11 +26,10 @@ class CharacterBuilder extends Component {
             alignment: "",
             npc: false,
         },
-        userId: '',
-        
+        redirect: ''
     }
 
-    static contextType = UserSession;
+    static contextType = AppStateContext;
 
     handleCharacterChange = (property, value) => {
         switch (property) {
@@ -64,32 +64,36 @@ class CharacterBuilder extends Component {
 
     createCharacter = () => {
         const character = this.state.character;
-        dbAPI.userSession().then(user => {
-            let id = []
-            for(let i = 0; i < user.data.length; i++) {
-                id.push(user.data[i])
-            }
-            console.log(id.join(''))
-            this.setState({ userId: id.join('') })
-            
-            character.userId = this.state.userId;
-            
-            dbAPI.createCharacterUser(character).then(res => {
-                const campID = res.data._id;
+        // dbAPI.userSession().then(user => {
+        let id = []
+        for(let i = 0; i < this.context.user.length; i++) {
+            id.push(this.context.user[i])
+        }
+        console.log(id.join(''))
 
-            });
+        character.userId = id.join('');
+
+        dbAPI.createCharacterUser(character).then(res => {
+            this.setState({redirect: '/mycharacters'})
         });
+        // });
     }
 
     render() {
-        return (
-            <div className="container">
-                <div className="row">
-                    <Builder updateCharacter={this.handleCharacterChange} character={this.state.character} submitAction={this.createCharacter} />
-                    <Character character={this.state.character} />
-                </div>
-            </div>
-        );
+        if (this.state.redirect) {
+            return <Redirect to={{ pathname: this.state.redirect }} />
+        } else {
+            return (
+                <Session>
+                    <div className="container">
+                        <div className="row">
+                            <Builder updateCharacter={this.handleCharacterChange} character={this.state.character} submitAction={this.createCharacter} />
+                            <Character character={this.state.character} />
+                        </div>
+                    </div>
+                </Session>
+            );
+        }
     }
 }
 
