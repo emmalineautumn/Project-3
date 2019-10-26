@@ -1,0 +1,37 @@
+.Character {
+    background-color: rgb(144, 144, 144);
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 7px 10px 12px -5px;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 5%;
+    margin-left: 10;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.Character-data {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.Character-image {
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+}
+
+.Character-image img {
+    width: 500px;
+}
+
+.Character-title {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 4rem;
+    color: #B71C1C;
+    font-family: 'Qwigley'
+}

@@ -31,8 +31,8 @@ export default {
   createUser: userData => {
     return axios.post("/api/user", userData);
   },
-  populateCharacter: characterData => {
-    return axios.get("/api/user/character", characterData)
+  populateCharacter: id => {
+    return axios.get("/api/user/character/" + id)
   },
   populateCampaign: id => {
     return axios.get("/api/user/campaign/" + id)

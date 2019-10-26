@@ -31,35 +31,35 @@ const RaceCard = (props) => {
                     <div className="card-content grey lighten-4">
                         <button className="btn" id={props.campaignId} onClick={seeNotes}>Get Notes</button>
                         {notes && notes.map(data =>
-                            <div>
-                                <p>{moment(data.date).format("MMM Do YY")}</p>
-                                <p>Note: {data.note}</p>
+                            <div key={data._id}>
+                                <p key={data.date}>{moment(data.date).format("MMM Do YY")}</p>
+                                <p key={data.note}>Note: {data.note}</p>
                             </div>
                         )}
                         <form>
-                            <submit
+                            <button type="submit"
                                 className="btn"
-                                style={!show ? { display: "none" } : { display: "block" }}
+                                style={!show ? { display: "none" } : { display: "block", margin: "auto" }}
                                 onClick={event => {
                                     event.preventDefault(); setShow(false)
                                 }}>
                                 Add Note
-                                </submit>
+                                </button>
                             <textarea
                                 name="campaignNotes"
                                 style={show ? { display: "none" } : { display: "block" }}
                                 value={campaignNotes}
                                 onChange={event => setCampaignNotes(event.target.value)}
                             />
-                            <submit
+                            <button type="submit"
                                 className="btn"
                                 id={props.campaignId}
-                                style={show ? { display: "none" } : { display: "block" }}
+                                style={show ? { display: "none" } : { display: "block", margin: "auto" }}
                                 onClick={event => {
                                     event.preventDefault(); newNote(event.target.id); setShow(true)
                                 }}>
-                                New Note
-                                </submit>
+                                Save Note
+                                </button>
                         </form>
                     </div>
                 </div>
