@@ -9,11 +9,9 @@ module.exports = {
       .catch(err => res.status(502).json(err))
   },
   session: function (req, res) {
-    res.json(req.session.passport.user)
+      res.json(req.session.passport.user)
   },
   create: function (req, res) {
-    let data = req.body
-    console.log(data)
     const { body } = req;
     const { password, username } = body;
     let { email } = body;
@@ -84,6 +82,10 @@ module.exports = {
     .catch(function (err) {
       res.json(err)
     })
+  },
+  logout:(req, res) =>{
+    req.logout();
+    res.redirect('/');
   },
   update: (req, res) => {
     db.User

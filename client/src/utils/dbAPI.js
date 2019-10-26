@@ -60,5 +60,8 @@ export default {
   },
   createCharacter: characterData => {
     return axios.post("/api/character", characterData);
+  },
+  userLogout: () => {
+    return axios.get("/api/user/logout")
   }
 };

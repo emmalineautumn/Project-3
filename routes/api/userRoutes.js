@@ -11,7 +11,6 @@ router.route('/me')
 router.route('/login')
     .post(passport.authenticate('local'),
         function (req, res) {
-            console.log(req.user + " This is /login")
             res.send("Logged IN")
         }
     );
@@ -21,6 +20,9 @@ router.route('/character/:id')
         
 router.route('/campaign/:id')
         .get(User.populateCampaign)
+
+router.route('/logout')
+        .get(User.logout)
 
 router.route('/:id')
     .get(User.findAll)

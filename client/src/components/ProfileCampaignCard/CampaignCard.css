@@ -1,0 +1,17 @@
+.btn {
+    color: white;
+    background-color: #B71C1C;
+    margin: .5em;
+}
+
+.btn:hover {
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: 0 0 7px black;
+}
+
+.campaignCard {
+    background-color: whitesmoke;
+    box-shadow: 7px 10px 12px -5px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
