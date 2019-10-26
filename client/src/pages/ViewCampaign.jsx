@@ -20,7 +20,8 @@ export default function ViewCampaign(props) {
             });
     }
 
-    const sendInvite = () => {
+    const sendInvite = (event) => {
+        event.preventDefault()
         const request = {
             recipient,
             campaignId: campaign._id,

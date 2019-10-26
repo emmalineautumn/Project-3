@@ -2,10 +2,11 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 async function invite(recipient, campaign, inviter) {
+    console.log(recipient, campaign, inviter);
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
             user: process.env.SOURCE_EMAIL,
             pass: process.env.SOURCE_EMAIL_PW
@@ -23,7 +24,7 @@ async function invite(recipient, campaign, inviter) {
     //     }
     // })
 
-    let info = await transporter.sendMail({
+    transporter.sendMail({
         from: `"Dragonslayer Invites 🐲" <${process.env.SOURCE_EMAIL}>`,
         to: recipient,
         subject: 'Join my Dragonslayer campaign!',
@@ -66,7 +67,15 @@ async function invite(recipient, campaign, inviter) {
             <img src="https://imgur.com/a/1lGtTPy" alt="dragonslayer">
         </body>
         </html>`
-    });
+    },
+    (err, info)=>{
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(info.response)
+        }
+    }
+    );
 }
 
 module.exports = invite;
