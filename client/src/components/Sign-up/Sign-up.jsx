@@ -14,8 +14,6 @@ const SignUp = (props) => {
 
   const context = useContext(AppStateContext)
 
-  console.log(props.match)
-
   const createUser = (user) => {
     dbAPI.createUser(user)
       .then(saved => {
@@ -27,7 +25,7 @@ const SignUp = (props) => {
           })
           .then(response => {
             context.updateUser();
-            if (props.path === '/sign-up') {
+            if (props.location.pathname === '/sign-up') {
               setRedirectTo('/')
             }
           }).catch(error => {
