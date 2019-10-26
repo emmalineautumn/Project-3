@@ -23,33 +23,17 @@ class Home extends Component {
               <div className="dndRules card-content grey lighten-4">
                 <p id="redFont">But don't take our word for it.</p>
                 <p>
-                  Start now, and dive into this world of mischief and magic. 
-                </p>
-                <p>Fraternize with the Tieflings, take Tito's shots with the Half-Elves, and bite 
-                  into a turkey leg with the Orcs. 
+                  Start now, and dive into this world of mischief and magic.
                 </p>
                 <ul>
                   <li>Create a Character</li>
                   <li>Start a Campaign</li>
                   <li>Read Up On Your Spells & Monsters</li>
                 </ul>
-                <Link to="/character/create">
-                  <Buttons
-                    title="Make Your Character!"
-                    colors={["red", "darken-4"]}
-                  />
-                </Link>
-                <Link to="/campaign">
-                  <Buttons
-                    title="Start a New Campaign"
-                    colors={["red", "darken-4"]}
-                  />
-                </Link>
               </div>
-              
             </div>
 
-            {/* <div
+            <div
               className="row container grey lighten-5"
               id="headerDiv"
               style={{
@@ -57,22 +41,16 @@ class Home extends Component {
               }}
             >
               <h4>
-                Welcome to our world, mere mortal. Would you like to make your
-                character?
+                Welcome to our world, mere mortal. Would you like to make
+                your character?
               </h4>
               <Link to="/character/create">
-                <Buttons
-                  title="Make Your Character!"
-                  colors={["red", "darken-4"]}
-                />
+                <Buttons title="Yes, please!" colors={["red", "darken-4"]} />
               </Link>
               <Link to="/campaign">
-                <Buttons
-                  title="Start a New Campaign"
-                  colors={["red", "darken-4"]}
-                />
+                <Buttons title="New Campaign" colors={["red", "darken-4"]} />
               </Link>
-            </div> */}
+            </div>
           </div>
         );
   }
