@@ -9,9 +9,9 @@ class Header extends Component {
 
     render() {
         return (
-            <header className="z-depth-2 hide-on-med-and-down">
+            <header className="z-depth-2">
                 <div id="userDisplay" className="z-depth-2 grey darken-3">
-                    <div id="userDisplayTwo" className="grey darken-3 left"></div>
+                    <div id="userDisplayTwo" className="grey darken-3 left hide-on-med-and-down"></div>
                     {!this.context.user && (
                         <>
                             <a href="/sign-in" className="valign-wrapper right">
