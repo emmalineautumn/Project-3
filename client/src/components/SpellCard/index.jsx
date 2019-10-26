@@ -4,7 +4,7 @@ import "./SpellCard.css";
 const SpellCard = (props) => {
     return (
         <>
-            <div className="spellCard">
+            <div className="spellCard" style={{fontFamily: 'Grenze'}}>
             <div className="card">
                 <div className="card-content">
                     <h3>{props.title}</h3>
