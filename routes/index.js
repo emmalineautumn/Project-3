@@ -4,8 +4,6 @@ const apiRoutes = require("./api");
 const Campaign = require('../controller/Campaign')
 
 router.use("/api", apiRoutes);
-router.route("/viewcampaign/:id")
-  .get(Campaign.viewCampaign)
 
 if (process.env.NODE_ENV === "production") {
   router.use((req, res) => {
