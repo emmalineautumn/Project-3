@@ -5,8 +5,8 @@ async function invite(recipient, campaign, inviter) {
     console.log(recipient, campaign, inviter);
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        port: 587,
+        secure: false,
         auth: {
             user: process.env.SOURCE_EMAIL,
             pass: process.env.SOURCE_EMAIL_PW
