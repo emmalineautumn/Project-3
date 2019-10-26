@@ -3,5 +3,5 @@ node_modules
 /.vscode
 package-lock.json
 /client/package-lock.json
-.env
-/nodemailer.env
+/.env
+
