@@ -21,9 +21,14 @@ const MyCampaigns = () => {
     return (
         <>
             <div className="container">
+            <div className="row">
+            <div className="col m8 offset-m2 s12" style={{fontFamily: 'Grenze'}}>
+                <h1 style={{color: "#fff"}}>My Characters</h1>
+             </div>
+             </div>
                 <div className="row">
                     {campaigns && campaigns.map(data => {
-                        return <div className="col s12 m6" style={{ height: "60vh" }} key={data._id}>
+                        return <div className="col s12 m6" style={{ height: "60vh", overflow: "auto" }} key={data._id}>
                             <CampaignCard
                                 key={data._id}
                                 title={data.name}

@@ -25,6 +25,11 @@ const MyCharacters = () => {
              strength, dexterity, intelligence, charisma, constitution, wisdom */}
             {console.log(character)}
             <div className="container">
+            <div className="row">
+            <div className="col m8 offset-m2 s12" style={{fontFamily: 'Grenze'}}>
+                <h1 style={{color: "#fff"}}>My Characters</h1>
+             </div>
+             </div>
                 <div className="row">
                     {character && character.map(data => {
                         return <div className="col s12 m6" style={{ height: "80vh", overflow: "auto" }} key={data._id}>
