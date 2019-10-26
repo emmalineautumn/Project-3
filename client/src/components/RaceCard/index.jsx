@@ -5,7 +5,7 @@ import "./RaceCard.css";
 const RaceCard = (props) => {
     return (
         <>
-            <div className="raceCard container">
+            <div className="raceCard container" style={{fontFamily: 'Grenze'}}>
             <div className="card">
                 <div className="card-content">
                     <h1>{props.title}</h1>

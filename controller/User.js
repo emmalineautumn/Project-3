@@ -66,7 +66,7 @@ module.exports = {
     });
   },
   populateCharacter: (req, res) => {
-    db.User.findOne({ _id: req.body.id })
+    db.User.findOne({ _id: req.params.id })
     .populate("characters")
     .then(function (foundOne) {
       res.json(foundOne)

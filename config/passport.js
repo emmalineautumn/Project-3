@@ -18,13 +18,10 @@ module.exports = function (passport) {
 
                 // Match password
                 bcrypt.compare(password, user.password, (err, isMatch) => {
-                    console.log("Bcrypt!")
                     if (err) throw err;
                     if (isMatch) {
-                        console.log("is match? yes")
                         return done(null, user);
                     } else {
-                        console.log("is match? no")
                         return done(null, false, { message: 'Password incorrect' });
                     }
                 });
@@ -33,13 +30,11 @@ module.exports = function (passport) {
     );
 
     passport.serializeUser(function(user, done) {
-        console.log("serializeUser called");
         done(null, user._id);
       });
 
     passport.deserializeUser(function (id, done) {
         User.findById(id, function (err, user) {
-            console.log("Deserialize User called")
             done(err, user);
         });
     });

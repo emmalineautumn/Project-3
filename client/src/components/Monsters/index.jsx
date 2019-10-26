@@ -29,7 +29,7 @@ class RefMonsters extends Component {
         return (
             <>
                 <Router>
-                    <div className="container">
+                    <div className="container" style={{fontFamily: 'Grenze'}}>
                         <div className="row"></div>
                         <div className="row">
                             <div className="col m4 s12" style={{height: "80vh", overflow: "auto"}}>
