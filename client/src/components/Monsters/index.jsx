@@ -33,21 +33,20 @@ class RefMonsters extends Component {
                         <div className="row"></div>
                         <div className="row">
                             <div className="col m4 s12" style={{height: "80vh", overflow: "auto"}}>
-                        {this.state.monsters.map(monster => {
-                            return (
-                                <Link to={"/monsters/" + monster.url.split('/').pop()} key={monster.url.split('/').pop()}>
-                                    <Button title={monster.name} key={monster.url.split('/').pop()} />
-                                </Link>
-                            )
-                        })}
+                                {this.state.monsters.map(monster => {
+                                    return (
+                                        <Link to={"/monsters/" + monster.url.split('/').pop()} key={monster.url.split('/').pop()}>
+                                            <Button title={monster.name} key={monster.url.split('/').pop()} />
+                                        </Link>
+                                    )
+                                })}
                             </div>
-
-                        <div className="col m8 s12">
-                    <Switch>
-                        <Route path="/monsters/:id" component={ThisMonster} />
-                    </Switch>
-                    </div>
-                    </div>
+                            <div className="col m8 s12" style={{ height: "80vh", overflow: "auto" }}>
+                                <Switch>
+                                    <Route path="/monsters/:id" component={ThisMonster} />
+                                </Switch>
+                            </div>
+                        </div>
                     </div>
                 </Router>
             </>

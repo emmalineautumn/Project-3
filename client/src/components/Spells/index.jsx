@@ -45,7 +45,6 @@ class RefSpells extends Component {
                                 <Switch>
                                     <Route path="/spells/:id" component={ThisSpell} />
                                 </Switch>
-
                             </div>
                         </div>
                     </div>

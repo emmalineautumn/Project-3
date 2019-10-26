@@ -5,29 +5,28 @@ import "./MonsterCard.css";
 const RaceCard = (props) => {
     return (
         <>
-            <div className="monsterCard container" style={{fontFamily: 'Grenze'}}>
+            <div className="monsterCard" style={{fontFamily: 'Grenze'}}>
             <div className="card">
                 <div className="card-content">
-                    <h1>{props.title}</h1>
+                    <h1 className="descriptionMonster">{props.title}</h1>
                     <div>
-                        <h6>Type: {props.type}</h6>
+                        <p><span className="subHeadingMonster">Type: </span>{props.type}</p>
                     </div>
                     <div>
-                        <h6>Languages: {props.languages}</h6>
+                        <p><span className="subHeadingMonster">Languages: </span>{props.languages}</p>
                     </div>
-
                 </div>
                 <div className="card-content grey lighten-4">
-                <h6>Average Size: {props.size}</h6>
-                    <p>Senses: {props.senses}</p>
-                    <p>Speed: {props.speed}</p>
-                    <p>Hit Dice: {props.hitDice}</p>
-                    <p>Alignment: {props.alignment}</p>
+                <p><span className="subHeadingMonster">Average Size: </span>{props.size}</p>
+                <p><span className="subHeadingMonster">Senses: </span>{props.senses}</p>
+                <p><span className="subHeadingMonster">Speed: </span>{props.speed}</p>
+                <p><span className="subHeadingMonster">Hit Dice: </span>{props.hitDice}</p>
+                <p><span className="subHeadingMonster">Alignment: </span>{props.alignment}</p>
                     <div>
-                        <h6>{props.actions}</h6>
+                <h6>{props.actions}</h6>
                     </div>
                     <div>
-                        <h6>{props.legendaryActions}</h6>
+                <h6>{props.legendaryActions}</h6>
                     </div>
                 </div>
             </div>
