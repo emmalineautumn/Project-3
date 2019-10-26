@@ -18,8 +18,8 @@ class CampaignJoin extends Component {
                 dbAPI.getUser(res.data[0].DM)
                     .then(res => {
                         this.setState({DM: res.data[0].username});
-                    })
-            })
+                    });
+            });
     }
 
     render () {
