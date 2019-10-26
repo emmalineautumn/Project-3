@@ -1,3 +1,7 @@
+body {
+  font-family: "Grenze";
+}
+
 .App {
   text-align: center;
 }
@@ -18,11 +22,35 @@
   font-size: large;
 }
 
+.dndIntro {
+  background-color: whitesmoke;
+  box-shadow: 7px 10px 12px -5px;
+  padding: 2rem;
+  margin-top: 2rem;
+  font-size: 24px;
+}
+
+.dndRules {
+  background-color: whitesmoke;
+  box-shadow: 7px 10px 12px -5px;
+  padding: 2rem;
+  margin-top: 2rem;
+  font-size: 20px;
+}
+
 #headerDiv{
   background-color: whitesmoke;
   box-shadow: 7px 10px 12px -5px;
   padding: 2rem;
   margin-top: 2rem;
+  width: 60%;
+}
+
+#redFont {
+  color: #b71c1c;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 
 @keyframes App-logo-spin {
