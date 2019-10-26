@@ -62,8 +62,8 @@ async function invite(recipient, campaign, inviter) {
         <body>
             <h1>An adventure awaits!</h1>
             <p>${inviter} has invited you to join their party on Dragonslayer. Follow this link and sign in to join their campaign!</p>
-            <a href="https://thedragonslayer.herokuapp.com/campaign/join/${campaign}">Join Campaign</a>
-            <img src="https://thedragonslayer.herokuapp.com/img/dragon_logo.png" alt="dragonslayer">
+            <a href="https://dragonslayerapp.com/campaign/join/${campaign}">Join Campaign</a>
+            <img src="https://imgur.com/a/1lGtTPy" alt="dragonslayer">
         </body>
         </html>`
     });
