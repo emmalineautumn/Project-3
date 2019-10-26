@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import "./CampaignCard.css";
 import dbAPI from '../../../utils/dbAPI'
 import { AppStateContext } from '../../../AppContext';

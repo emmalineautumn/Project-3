@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Character.css';
 
 const Character = (props) => {
+    //eslint-disable-next-line
     const [sprites, setSprites] = useState({
         ClassImages: {
             Wizard: 'https://piskel-imgstore-b.appspot.com/img/44e83b7a-f797-11e9-9d69-7b541452a7e8.gif',

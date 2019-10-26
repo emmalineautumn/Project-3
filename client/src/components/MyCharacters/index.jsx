@@ -24,7 +24,6 @@ const MyCharacters = () => {
         <>
             {/* class, name, gender, race, class, background, alignment,
              strength, dexterity, intelligence, charisma, constitution, wisdom */}
-            {console.log(character)}
             <div className="container">
             <div className="row">
             <div className="col m8 offset-m2 s12" style={{fontFamily: 'Grenze'}}>
