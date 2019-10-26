@@ -8,17 +8,9 @@
         ![Image of Wizard]
         (https://piskel-imgstore-b.appspot.com/img/44e83b7a-f797-11e9-9d69-7b541452a7e8.gif)
 
-### Overview of application
-        This application uses NodeJS and npm's node modules to run multiple different processes based 
-        on what is asked of LIRI.
-        It uses a node-spotify-api package found at (https://www.npmjs.com/package/node-spotify-api) to 
-        intake songs commands and spit out information about the song.
-        It uses an api called [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api to 
-        intake a band and put out information about upcoming concerts.
-        It also uses moment.js along side the bands in town api to configure the dates correctly and legibly.
-        I am also using OMDB's API [OMDB API](http://www.omdbapi.com)
-        Both the bands in town API and omdb API is being run using the axios package
-        It then uses 'fs' to append to a log file any commands fed to it
+### Overview of Application
+        This application is a create-react-app, broken into individual components, and routed to 
+        their respective pages. 
 
 ### How to Use
         To enter the Dragonslayer world, simply click [here.] (http://dragonslayerapp.com/) 
