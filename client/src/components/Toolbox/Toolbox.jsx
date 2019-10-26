@@ -9,13 +9,13 @@ class Toolbox extends Component {
                 <iframe 
                     title="dice roller"
                     src="https://ltwilhelm.github.io/dragonslayer-dice/"
-                    class="webgl-content"
+                    className="webgl-content"
                     style={{
                         border: "0px #000000 none",
                         width: '100%'
                     }}
                     scrolling="no"
-                    frameborder="1"
+                    frameBorder="1"
                     height="1080"
                     width="1920"></iframe>
             </div>

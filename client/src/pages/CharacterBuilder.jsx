@@ -64,19 +64,17 @@ class CharacterBuilder extends Component {
 
     createCharacter = () => {
         const character = this.state.character;
-        // dbAPI.userSession().then(user => {
         let id = []
         for(let i = 0; i < this.context.user.length; i++) {
             id.push(this.context.user[i])
         }
-        console.log(id.join(''))
 
         character.userId = id.join('');
+        character.campaignId = this.props.match.params.campaignId;
 
         dbAPI.createCharacterUser(character).then(res => {
             this.setState({redirect: '/mycharacters'})
         });
-        // });
     }
 
     render() {

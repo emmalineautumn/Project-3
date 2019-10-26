@@ -11,7 +11,6 @@ router.route('/me')
 router.route('/login')
     .post(passport.authenticate('local'),
         function (req, res) {
-            console.log(req.user + " This is /login")
             res.send("Logged IN")
         }
     );

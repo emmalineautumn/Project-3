@@ -24,7 +24,9 @@
 }
 
 .Character-image img {
-    width: 500px;
+    max-width: 500px;
+    width: 90%;
+    margin: auto;
 }
 
 .Character-title {
