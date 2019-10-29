@@ -5,7 +5,6 @@ import "../../App.css";
 import "./Nav.css";
 
 
-
 class NavBar extends Component {
 
     render() {
@@ -15,7 +14,7 @@ class NavBar extends Component {
                 <ul style={{ 
                     fontFamily: 'Grenze'
                 }}>
-                    <li><NavLink to="/mycharacters">My Characters</NavLink></li>
+                    <li><NavLink className="embersImg" to="/mycharacters">My Characters</NavLink><img className="emberImg" src="/img/ember-hover.gif"/></li>
                     <li><NavLink to="/mycampaigns">My Campaigns</NavLink></li>
                     <li><NavLink to="/mytables">My Tables</NavLink></li>
                     <Dropdown label="References">
