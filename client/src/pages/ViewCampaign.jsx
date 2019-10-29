@@ -28,6 +28,7 @@ export default function ViewCampaign(props) {
             inviter: context.username
         }
         mailerAPI.mailInvite(request)
+            .then(setShowInvite(false));
     }
 
     useLayoutEffect(getCampaign, [context])

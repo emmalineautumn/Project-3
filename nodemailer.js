@@ -1,20 +1,14 @@
 const nodemailer = require('nodemailer');
+const sgTransport =  require('nodemailer-sendgrid-transport');
 require('dotenv').config();
 
 async function invite(recipient, campaign, inviter) {
-    console.log(recipient, campaign, inviter);
-    let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+    let options = {
         auth: {
-            user: process.env.SOURCE_EMAIL,
-            pass: process.env.SOURCE_EMAIL_PW
-        },
-        tls: {
-            rejectUnauthorized: false
+            api_user: process.env.SENDGRID_USERNAME,
+            api_key: process.env.SENDGRID_PASSWORD
         }
-    });
+    };
 
     // transporter.verify((error, success) => {
     //     if (error) {
@@ -23,6 +17,8 @@ async function invite(recipient, campaign, inviter) {
     //         console.log('success')
     //     }
     // })
+
+    let transporter = nodemailer.createTransport(sgTransport(options));
 
     transporter.sendMail({
         from: `"Dragonslayer Invites 🐲" <${process.env.SOURCE_EMAIL}>`,
@@ -72,7 +68,7 @@ async function invite(recipient, campaign, inviter) {
         if (err) {
             console.log(err)
         } else {
-            console.log(info.response)
+            console.log(info.response, "sent");
         }
     }
     );
