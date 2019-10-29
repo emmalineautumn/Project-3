@@ -1,6 +1,17 @@
+.descriptionMonster {
+    font-weight: bold;
+    color: #b71c1c;
+    margin-top: 0;
+}
+
 .monsterCard {
     background-color: whitesmoke;
     box-shadow: 7px 10px 12px -5px;
     padding: 2rem;
     margin-top: 2rem;
+}
+
+.subHeadingMonster {
+    font-weight: bold;
+    font-size: 20px;
 }

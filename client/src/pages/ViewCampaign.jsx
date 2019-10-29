@@ -42,7 +42,7 @@ export default function ViewCampaign(props) {
                         <h1>{campaign.name}</h1>
                         <Buttons title="Invite Players" clickThis={() => setShowInvite(true)} />
                         <div className="row">
-                            {campaign.characters.map(char => <div className="col m4"><Character race={char.race} class={char.class} alignment={char.alignment} strength={char.stats.strength} dexterity={char.stats.dexterity} intelligence={char.stats.intelligence} charisma={char.stats.charisma} constitution={char.stats.constitution} wisdom={char.stats.wisdom} /></div>)}
+                            {campaign.characters.map(char => <div className="col m4"><Character name={char.name} race={char.race} class={char.class} alignment={char.alignment} strength={char.stats.strength} dexterity={char.stats.dexterity} intelligence={char.stats.intelligence} charisma={char.stats.charisma} constitution={char.stats.constitution} wisdom={char.stats.wisdom} /></div>)}
                         </div>
                     </>
                 ) : (

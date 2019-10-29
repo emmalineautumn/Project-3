@@ -115,14 +115,14 @@ const SignUp = (props) => {
                   value={email}
                   onChange={event => setEmail(event.target.value)}
                 />
-                <label htmlFor="email" className="black-text bold active"
-                >
+                <label htmlFor="email" className="black-text bold active">
                   Email
                 </label>
               </div>
             </div>
             <input
               className="btn btnSignUp"
+              style={{ fontFamily: "Grenze" }}
               type="submit"
               onClick={handleUserCreation}
             />

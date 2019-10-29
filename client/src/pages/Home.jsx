@@ -35,44 +35,18 @@ class Home extends Component {
                 </ul>
                 <Link to="/character/create">
                   <Buttons
-                    title="Make Your Character!"
+                    title="Make New Characters!"
                     colors={["red", "darken-4"]}
                   />
                 </Link>
                 <Link to="/campaign">
                   <Buttons
-                    title="Start a New Campaign"
+                    title="Create a New Campaign"
                     colors={["red", "darken-4"]}
                   />
                 </Link>
               </div>
-              
             </div>
-
-            {/* <div
-              className="row container grey lighten-5"
-              id="headerDiv"
-              style={{
-                fontFamily: "Grenze"
-              }}
-            >
-              <h4>
-                Welcome to our world, mere mortal. Would you like to make your
-                character?
-              </h4>
-              <Link to="/character/create">
-                <Buttons
-                  title="Make Your Character!"
-                  colors={["red", "darken-4"]}
-                />
-              </Link>
-              <Link to="/campaign">
-                <Buttons
-                  title="Start a New Campaign"
-                  colors={["red", "darken-4"]}
-                />
-              </Link>
-            </div> */}
           </div>
         );
   }

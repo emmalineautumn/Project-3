@@ -33,7 +33,6 @@ const ThisMonster = () => {
                             legendaryActions={thisMonster.legendaryActions ? "Legendary Actions: " + thisMonster.legendary_actions.map(data => " " + data.name) : null}
                             type={thisMonster.type ? thisMonster.type : null}
                         />}
-                    
                 </div>
             </div>
         </>

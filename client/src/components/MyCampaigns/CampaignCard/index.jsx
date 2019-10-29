@@ -23,7 +23,7 @@ const RaceCard = (props) => {
     }
 
     return (
-        <div className="campaignCard container" style={{ fontFamily: 'Grenze' }}>
+        <div className="campaignCard" style={{ fontFamily: 'Grenze' }}>
             <div className="card">
                 <div className="card-content">
                     <h3>{props.title}</h3>
