@@ -3,11 +3,10 @@ import { NavLink } from 'react-router-dom';
 import Dropdown from '../Dropdown';
 import "../../App.css";
 import "./Nav.css";
-
+import NavIcon from './NavIcon';
 
 
 class NavBar extends Component {
-
     render() {
         return <>
             <div className='hide-on-med-and-down' style={{ height: '2em' }}></div>
@@ -15,9 +14,12 @@ class NavBar extends Component {
                 <ul style={{ 
                     fontFamily: 'Grenze'
                 }}>
-                    <li><NavLink to="/mycharacters">My Characters</NavLink></li>
-                    <li><NavLink to="/mycampaigns">My Campaigns</NavLink></li>
-                    <li><NavLink to="/mytables">My Tables</NavLink></li>
+                    <NavIcon to="/mycharacters" label="My Characters" />
+                    <NavIcon to="/mycampaigns" label="My Campaigns" />
+                    <NavIcon to="/mytables" label="My Tables" />
+                    {/* <li><NavLink to="/mycharacters"><img src={this.state.hover} alt=""/> My Characters</NavLink></li> */}
+                    {/* <li><NavLink to="/mycampaigns">My Campaigns</NavLink></li>
+                    <li><NavLink to="/mytables">My Tables</NavLink></li> */}
                     <Dropdown label="References">
                         <li><NavLink to="/spells">Spells</NavLink></li>
                         <li><NavLink to="/classes">Classes</NavLink></li>
