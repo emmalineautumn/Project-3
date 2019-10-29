@@ -5,7 +5,6 @@ import "../../App.css";
 import "./Nav.css";
 import NavIcon from './NavIcon';
 
-
 class NavBar extends Component {
     render() {
         return <>

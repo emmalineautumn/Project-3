@@ -1,0 +1,10 @@
+.emberImg{
+    background-image: url(/client/public/img/ember-hover.gif);
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    width: 100px;
+}
+.emberImg:hover {
+    opacity: .7;
+}
