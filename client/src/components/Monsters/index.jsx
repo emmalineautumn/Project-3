@@ -13,6 +13,7 @@ class RefMonsters extends Component {
     state = {
         monsters: [],
         monster: "",
+        defaultMonsters: []
     }
 
     componentDidMount() {
@@ -22,7 +23,13 @@ class RefMonsters extends Component {
     getMonsters = () => {
         API.getAllMonsters().then(monster => {
             this.setState({ monsters: monster.data.results })
+            this.setState({ defaultMonsters: monster.data.results })
         })
+    }
+
+    searchMonsters = (e) => {
+        const searchedArr = this.state.defaultMonsters.filter(monster => monster.name.toLowerCase().includes(e.target.value.toLowerCase()))
+        this.setState({ monsters: searchedArr })
     }
 
     render() {
@@ -30,9 +37,13 @@ class RefMonsters extends Component {
             <>
                 <Router>
                     <div className="container" style={{fontFamily: 'Grenze'}}>
-                        <div className="row"></div>
+                        <div className="row">
+
+                        </div>
                         <div className="row">
                             <div className="col m4 s12" style={{height: "80vh", overflow: "auto"}}>
+                            <h1>Search Monsters</h1>
+                            <input type="text" onChange={this.searchMonsters} />
                                 {this.state.monsters.map(monster => {
                                     return (
                                         <Link to={"/monsters/" + monster.url.split('/').pop()} key={monster.url.split('/').pop()}>

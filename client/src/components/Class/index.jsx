@@ -26,7 +26,7 @@ const ThisClass = () => {
                             subclasses={thisClass.subclasses.map(data => data.name)}
                             proficiencies={thisClass.proficiencies.map(data => data.name + ", ")}
                             choose={thisClass.proficiency_choices.map(data => data.choose + ", ")}
-                            proficiency={thisClass.proficiency_choices.map(data => {return <li>{data.from.map(res => res.name + ", ")}</li>})}
+                            proficiency={thisClass.proficiency_choices}
                             saving={thisClass.saving_throws.map(data => data.name + " ")}
                         />}
                     
