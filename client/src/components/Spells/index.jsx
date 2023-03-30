@@ -12,7 +12,8 @@ import {
 class RefSpells extends Component {
     state = {
         spells: [],
-        spell: ""
+        spell: "",
+        defaultSpells: []
     }
 
     componentDidMount() {
@@ -21,8 +22,13 @@ class RefSpells extends Component {
 
     getSpells = () => {
         API.getAllSpells().then(spells => {
-            this.setState({ spells: spells.data.results })
+            this.setState({ spells: spells.data.results, defaultSpells: spells.data.results })
         })
+    }
+
+    searchMonsters = (e) => {
+        const searchedArr = this.state.defaultSpells.filter(spells => spells.name.toLowerCase().includes(e.target.value.toLowerCase()))
+        this.setState({ spells: searchedArr })
     }
 
     render() {
@@ -33,6 +39,8 @@ class RefSpells extends Component {
                         <div className="row"></div>
                         <div className="row">
                             <div className="col m4 s12" style={{height: "80vh", overflow: "auto"}}>
+                            <h1>Search Spells</h1>
+                            <input type="text" onChange={this.searchMonsters} />
                                 {this.state.spells.map(spells => {
                                     return (
                                         <Link to={"/spells/" + spells.url.split('/').pop()} key={spells.url.split('/').pop()}>
