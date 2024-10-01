@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react'
+import React, { useState, useLayoutEffect, useEffect } from 'react'
 import API from '../../utils/API'
 import ClassCard from '../ClassCard'
 import { useParams } from 'react-router-dom'
@@ -14,6 +14,10 @@ const ThisClass = () => {
 
     useLayoutEffect(getThisClass, [id])
 
+
+    useEffect(() => {
+        console.log(thisClass)
+    }, [thisClass])
     return (
         <>
             <div className="container">
@@ -25,8 +29,8 @@ const ThisClass = () => {
                             hitDie={thisClass.hit_die}
                             subclasses={thisClass.subclasses.map(data => data.name)}
                             proficiencies={thisClass.proficiencies.map(data => data.name + ", ")}
-                            choose={thisClass.proficiency_choices.map(data => data.choose + ", ")}
-                            proficiency={thisClass.proficiency_choices.map(data => {return <li>{data.from.map(res => res.name + ", ")}</li>})}
+                            choose={thisClass.proficiency_choices.map(data => <p>{data.choose + ", " + data.desc}</p>)}
+                            proficiency={thisClass.proficiency_choices.map(data => data.from.options.map(res => <p>{res.item ? res.item.name : "" }</p>))}
                             saving={thisClass.saving_throws.map(data => data.name + " ")}
                         />}
                     

@@ -19,7 +19,7 @@ const ClassCard = (props) => {
                     <div id="proficiency">
                         <span className="subHeadingClass">Choose: </span>{props.choose}
                         <p><span className="subHeadingClass">From: </span></p>
-                        <ol>{props.proficiency}</ol>
+                        {props.proficiency}
                     </div>
                     <div id="saving">
                         <span className="subHeadingClass">Saving Throws: </span>{props.saving}

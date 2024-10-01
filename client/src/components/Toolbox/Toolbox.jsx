@@ -8,7 +8,7 @@ class Toolbox extends Component {
             <div id="gameRegion">
                 <iframe 
                     title="dice roller"
-                    src="https://ltwilhelm.github.io/dragonslayer-dice/"
+                    src="https://emmalineautumn.github.io/dragonslayer-dice/"
                     className="webgl-content"
                     style={{
                         border: "0px #000000 none",
