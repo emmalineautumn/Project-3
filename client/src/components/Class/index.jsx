@@ -14,10 +14,6 @@ const ThisClass = () => {
 
     useLayoutEffect(getThisClass, [id])
 
-
-    useEffect(() => {
-        console.log(thisClass)
-    }, [thisClass])
     return (
         <>
             <div className="container">
