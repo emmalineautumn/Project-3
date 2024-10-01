@@ -4,7 +4,7 @@
   "description": "Mern Demo",
   "main": "server.js",
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -18,13 +18,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^4.1.0",
+    "concurrently": "^9.0.1",
     "install-peers": "^1.0.3",
-    "nodemon": "^1.19.4"
+    "nodemon": "^3.1.7"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.3",
-    "axios": "^0.21.1",
+    "axios": "^1.7.7",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -37,7 +37,7 @@
     "mongoose": "^5.7.1",
     "nodemailer": "^6.4.16",
     "nodemailer-sendgrid-transport": "^0.2.0",
-    "passport": "^0.4.0",
+    "passport": "^0.7.0",
     "passport-local": "^1.0.0"
   }
 }

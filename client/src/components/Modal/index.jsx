@@ -8,7 +8,7 @@ const Modal = props => {
         <div className="modal display-block" style={{zIndex: 100}}>
             <section className="modal-main">
                 {props.children}
-                {/* <Buttons clickThis={props.handleClose} title="Close" /> */}
+                <Buttons clickThis={props.handleClose} title="Close" />
             </section>
         </div>
     );

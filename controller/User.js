@@ -9,7 +9,12 @@ module.exports = {
       .catch(err => res.status(502).json(err))
   },
   session: function (req, res) {
+    if(req.session.passport?.user) {
       res.json(req.session.passport.user)
+    } else {
+      res.status(500)
+    }
+    
   },
   create: function (req, res) {
     const { body } = req;
